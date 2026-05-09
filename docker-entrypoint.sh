@@ -8,8 +8,8 @@ php artisan view:cache
 php artisan migrate --force
 
 # Fix permissions after artisan commands (since they run as root)
-chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
+chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
 
 # Start Apache
 exec "$@"
