@@ -58,8 +58,7 @@
   <!-- ════════════ ՎԱՅՐԵՐ ════════════ -->
   <section class="location" id="location">
     <div class="section-inner">
-      <h2 class="section-title">ՎԱՅՐ</h2>
-      <div class="section-title-script">Ուր գնալ</div>
+      <h2 class="section-title location-title">Վայրեր</h2>
 
       <!-- Եկեղեցի -->
       <div class="location__block">
@@ -100,8 +99,7 @@
   <!-- ════════════ ԾՐԱԳԻՐ ════════════ -->
   <section class="programme" id="programme">
     <div class="section-inner">
-      <h2 class="section-title">ԾՐԱԳԻՐ</h2>
-      <div class="section-title-script">Օրվա ընթացքը</div>
+      <h2 class="section-title programme-title">ԾՐԱԳԻՐ</h2>
       <ul class="programme__list">
         <li class="programme__item">
           <span class="programme__time">15:00</span>
@@ -117,31 +115,7 @@
     </div>
   </section>
 
-  <!-- ════════════ ՀԵՏՀԱՇՎԱՐԿ ════════════ -->
-  <section class="countdown" id="countdown">
-    <div class="section-inner">
-      <h2 class="section-title">ՄՆԱՑԵԼ Է</h2>
-      <div class="section-title-script">Հետհաշվարկ</div>
-      <div class="countdown__grid">
-        <div class="countdown__item">
-          <span class="countdown__num" id="cd-days">—</span>
-          <span class="countdown__label">ՕՐ</span>
-        </div>
-        <div class="countdown__item">
-          <span class="countdown__num" id="cd-hours">—</span>
-          <span class="countdown__label">ԺԱՄ</span>
-        </div>
-        <div class="countdown__item">
-          <span class="countdown__num" id="cd-mins">—</span>
-          <span class="countdown__label">ՐՈՊԵ</span>
-        </div>
-        <div class="countdown__item">
-          <span class="countdown__num" id="cd-secs">—</span>
-          <span class="countdown__label">ՎԱՅՐԿ</span>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
 
 
