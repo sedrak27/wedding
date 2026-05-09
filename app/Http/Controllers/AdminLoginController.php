@@ -18,7 +18,7 @@ class AdminLoginController extends Controller
     {
         $password = $request->input('password');
 
-        if ($password === env('ADMIN_PASSWORD')) {
+        if ($password === env('ADMIN_PASSWORD', 'wedding2026')) {
             session(['admin_auth' => true]);
             return redirect()->route('admin');
         }

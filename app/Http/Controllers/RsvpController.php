@@ -25,7 +25,12 @@ class RsvpController extends Controller
             'guest_count.min' => 'Հյուրերի քանակը պետք է լինի առնվազն 1:',
         ]);
 
-        $ip = $request->ip();
+        // Render passes the real IP in HTTP headers
+        $ip = $request->header('True-Client-IP') ?? $request->header('X-Forwarded-For') ?? $request->ip();
+        if (str_contains($ip, ',')) {
+            $ip = trim(explode(',', $ip)[0]);
+        }
+        
         $location = 'Անհայտ';
         
         try {
