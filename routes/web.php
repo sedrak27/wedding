@@ -18,6 +18,7 @@ Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('adm
 // Protected Admin Routes
 Route::middleware(['admin.auth'])->group(function () {
     Route::get('/admin', [RsvpController::class, 'admin'])->name('admin');
+    Route::get('/admin/songs', [RsvpController::class, 'songs'])->name('admin.songs');
     Route::put('/admin/rsvp/{rsvp}', [RsvpController::class, 'update'])->name('rsvp.update');
     Route::delete('/admin/rsvp/{rsvp}', [RsvpController::class, 'destroy'])->name('rsvp.destroy');
 });

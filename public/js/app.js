@@ -89,7 +89,8 @@ function handleRsvp(event) {
     name: document.getElementById('rsvp-name').value,
     attend: document.querySelector('input[name="attend"]:checked')?.value,
     guest_count: document.getElementById('rsvp-count').value,
-    invited_by: document.querySelector('input[name="invited_by"]:checked')?.value
+    invited_by: document.querySelector('input[name="invited_by"]:checked')?.value,
+    desired_song: document.getElementById('rsvp-song') ? document.getElementById('rsvp-song').value : null
   };
 
   // Clear previous errors

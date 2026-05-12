@@ -151,6 +151,11 @@
             <input type="text" id="rsvp-count" class="rsvp__input-line" placeholder="Օրինակ՝ 2" />
             <div class="rsvp__error" id="err-guest_count"></div>
           </div>
+          <div class="rsvp__group">
+            <label class="rsvp__label">Ի՞նչ երգ կցանկանայիք հնչեր (ընտրովի)</label>
+            <input type="text" id="rsvp-song" class="rsvp__input-line" placeholder="Նշեք Ձեր նախընտրած երգը" />
+            <div class="rsvp__error" id="err-desired_song"></div>
+          </div>
           <button type="submit" class="btn-send" id="rsvp-submit">Ուղարկել</button>
         </form>
         <p class="rsvp__success" id="rsvp-success" style="display:none">🧡 Շնորհակալություն հաստատման համար:</p>

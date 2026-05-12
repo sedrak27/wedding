@@ -15,6 +15,7 @@ class RsvpController extends Controller
             'attend' => 'required|in:yes,no',
             'guest_count' => 'required_if:attend,yes|nullable|numeric|min:1|max:20',
             'invited_by' => 'required|string|in:sedrak,gohar',
+            'desired_song' => 'nullable|string|max:255',
         ], [
             'name.required' => 'Խնդրում ենք լրացնել անունը:',
             'attend.required' => 'Խնդրում ենք նշել մասնակցությունը:',
@@ -23,6 +24,7 @@ class RsvpController extends Controller
             'guest_count.numeric' => 'Հյուրերի քանակը պետք է լինի թիվ:',
             'guest_count.max' => 'Հյուրերի առավելագույն քանակը 20 է:',
             'guest_count.min' => 'Հյուրերի քանակը պետք է լինի առնվազն 1:',
+            'desired_song.max' => 'Երգի անվանումը շատ երկար է:',
         ]);
 
         // Render passes the real IP in HTTP headers
@@ -53,6 +55,7 @@ class RsvpController extends Controller
             'ip_address' => $ip,
             'user_agent' => $request->header('User-Agent'),
             'location' => $location,
+            'desired_song' => $validated['desired_song'] ?? null,
         ]);
 
         return response()->json(['message' => 'RSVP saved successfully']);
@@ -65,6 +68,7 @@ class RsvpController extends Controller
             'attend' => 'required|in:yes,no',
             'guest_count' => 'required_if:attend,yes|numeric|min:0',
             'invited_by' => 'required|string|in:sedrak,gohar',
+            'desired_song' => 'nullable|string|max:255',
         ]);
 
         $rsvp->update([
@@ -72,6 +76,7 @@ class RsvpController extends Controller
             'attend' => $validated['attend'],
             'guest_count' => $validated['attend'] == 'yes' ? $validated['guest_count'] : 0,
             'invited_by' => $validated['invited_by'],
+            'desired_song' => $validated['desired_song'] ?? null,
         ]);
 
         return back()->with('success', 'Գրառումը հաջողությամբ թարմացվել է:');
@@ -86,6 +91,16 @@ class RsvpController extends Controller
         $goharGuests = Rsvp::where('attend', 'yes')->where('invited_by', 'like', '%gohar%')->sum('guest_count');
 
         return view('admin', compact('rsvps', 'sedrakGuests', 'goharGuests'));
+    }
+
+    public function songs()
+    {
+        $songs = Rsvp::whereNotNull('desired_song')
+                     ->where('desired_song', '!=', '')
+                     ->orderBy('created_at', 'desc')
+                     ->get(['name', 'desired_song']);
+                     
+        return view('admin_songs', compact('songs'));
     }
 
     public function destroy(Rsvp $rsvp)

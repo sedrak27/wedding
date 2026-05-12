@@ -52,6 +52,7 @@
             <div class="table-header">
                 <h3 class="mb-0">Հրավիրվածների Ցուցակ</h3>
                 <div class="d-flex gap-2">
+                    <a href="{{ route('admin.songs') }}" class="btn btn-refresh btn-sm">🎵 Երգերի ցանկ</a>
                     <a href="{{ route('admin') }}" class="btn btn-refresh btn-sm">🔄 Թարմացնել</a>
                     <form action="{{ route('admin.logout') }}" method="POST">
                         @csrf
@@ -69,6 +70,7 @@
                                 <th>Մասնակցություն</th>
                                 <th>Հյուրեր</th>
                                 <th>Հրավիրված</th>
+                                <th>Երգ</th>
                                 <th>IP Հասցե</th>
                                 <th>Տեղանք</th>
                                 <th>Սարք (Device)</th>
@@ -88,6 +90,13 @@
                                 </td>
                                 <td>{{ $rsvp->guest_count ?? 0 }}</td>
                                 <td>{{ $rsvp->invited_by }}</td>
+                                <td>
+                                    @if($rsvp->desired_song)
+                                        <small class="text-muted">{{ Str::limit($rsvp->desired_song, 30) }}</small>
+                                    @else
+                                        -
+                                    @endif
+                                </td>
                                 <td><small class="text-muted">{{ $rsvp->ip_address }}</small></td>
                                 <td><small class="text-muted">{{ $rsvp->location ?? 'Անհայտ' }}</small></td>
                                 <td><small class="text-muted" title="{{ $rsvp->user_agent }}">{{ Str::limit($rsvp->user_agent, 20) }}</small></td>

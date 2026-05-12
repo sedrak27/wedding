@@ -17,5 +17,6 @@ class Rsvp extends Model
         'ip_address',
         'user_agent',
         'location',
+        'desired_song',
     ];
 }
