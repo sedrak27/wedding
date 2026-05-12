@@ -198,17 +198,20 @@ function handleRsvp(event) {
 (function initRsvpToggle() {
   const attendRadios = document.querySelectorAll('input[name="attend"]');
   const wrapper = document.getElementById('guest-count-wrapper');
+  const songWrapper = document.getElementById('song-wrapper');
   const countInput = document.getElementById('rsvp-count');
-  
-  if (!wrapper) return;
+  const songInput = document.getElementById('rsvp-song');
 
   function toggle() {
     const isAttending = document.querySelector('input[name="attend"]:checked')?.value === 'yes';
     if (isAttending) {
-      wrapper.style.display = 'block';
+      if (wrapper) wrapper.style.display = 'block';
+      if (songWrapper) songWrapper.style.display = 'block';
     } else {
-      wrapper.style.display = 'none';
-      countInput.value = ''; // clear if not attending
+      if (wrapper) wrapper.style.display = 'none';
+      if (songWrapper) songWrapper.style.display = 'none';
+      if (countInput) countInput.value = '';
+      if (songInput) songInput.value = '';
     }
   }
 
