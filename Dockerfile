@@ -13,10 +13,11 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Fix Apache MPM conflict: disable all MPMs, then enable only mpm_prefork (required for mod_php)
-RUN a2dismod mpm_event mpm_worker mpm_prefork 2>/dev/null || true \
-    && rm -f /etc/apache2/mods-enabled/mpm_*.load /etc/apache2/mods-enabled/mpm_*.conf \
-    && a2enmod mpm_prefork \
+# Fix Apache MPM conflict: directly manage symlinks — bypass a2enmod/a2dismod entirely
+# Delete ALL mpm_* symlinks, then manually link only mpm_prefork (required for mod_php)
+RUN find /etc/apache2/mods-enabled -name 'mpm_*' -delete \
+    && ln -s /etc/apache2/mods-available/mpm_prefork.load /etc/apache2/mods-enabled/mpm_prefork.load \
+    && ln -s /etc/apache2/mods-available/mpm_prefork.conf /etc/apache2/mods-enabled/mpm_prefork.conf \
     && a2enmod rewrite
 
 # Install Composer
