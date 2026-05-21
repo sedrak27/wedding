@@ -5,7 +5,8 @@
 
 /* ── Countdown Timer ──────────────────────────────────── */
 (function initCountdown() {
-  const weddingDate = new Date('2026-06-20T15:00:00');
+  // 2026-06-20 14:30 Երևանի ժամանակով (UTC+4)
+  const weddingDate = new Date('2026-06-20T14:30:00+04:00');
 
   const elDays  = document.getElementById('cd-days');
   const elHours = document.getElementById('cd-hours');

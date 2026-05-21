@@ -7,7 +7,7 @@
   <meta name="description" content="Սեդրակի և Գոհարի հարսանեկան հրավիրատոմս — 20 Հունիսի 2026" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Noto+Serif+Armenian:wght@300;400;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Noto+Serif+Armenian:wght@200;300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧡</text></svg>">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -19,7 +19,7 @@
     <div class="hero__overlay" style="background: rgba(255, 141, 33, 0.2);"></div>
     <div class="hero__content">
       <p class="hero__label">Հարսանեկան Հրավեր</p>
-      <h1 class="hero__names">Սեդրակ & Գոհար</h1>
+      <h1 class="hero__names">Սեդրակ <span style="font-family: sans-serif; font-weight: normal;">&</span> Գոհար</h1>
     </div>
     <div class="hero__scroll-hint">↓</div>
   </section>
@@ -30,8 +30,9 @@
       <h2 class="section-title">Սիրելի Հյուրեր</h2>
       <div class="section-title-script">Հրավեր</div>
       <p class="greeting__text">
-        Մենք մեծ սիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ մեր կյանքի ամենաերջանիկ օրը՝ մեր հարսանիքի տոնը:
-        Ձեր ներկայությունը կդարձնի այս օրն անմոռանալի: Մենք անհամբեր սպասում ենք Ձեզ:
+        Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու մեր կյանքի ամենաերջանիկ և հիշարժան օրվան՝ մեր հարսանիքին։
+        Ձեր ներկայությունն ու ջերմ բարեմաղթանքները մեզ համար անչափ կարևոր են և մեր ուրախությունն ավելի լիարժեք ու գեղեցիկ կդարձնեն։
+        Անհամբեր սպասում ենք Ձեզ՝ միասին կիսելու սիրով ու երջանկությամբ լի այս առանձնահատուկ օրը։
       </p>
     </div>
   </section>
@@ -56,10 +57,35 @@
     </div>
   </section>
 
+  <!-- ════════════ ՀԵՏՀԱՇՎԱՐԿ ════════════ -->
+  <section class="countdown" id="countdown">
+    <div class="section-inner">
+      <h2 class="section-title">Մնաց</h2>
+      <div class="countdown__grid">
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-days">--</span>
+          <span class="countdown__label">Օր</span>
+        </div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-hours">--</span>
+          <span class="countdown__label">Ժամ</span>
+        </div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-mins">--</span>
+          <span class="countdown__label">Րոպե</span>
+        </div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-secs">--</span>
+          <span class="countdown__label">Վայրկյան</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ════════════ ՎԱՅՐԵՐ ════════════ -->
   <section class="location" id="location">
     <div class="section-inner">
-      <h2 class="section-title location-title">Վայրեր</h2>
+      <h2 class="section-title location-title">Օրվա Ծրագիր</h2>
 
       <!-- Եկեղեցի -->
       <div class="location__block">
@@ -81,7 +107,7 @@
 
       <!-- Ռեստորան -->
       <div class="location__block">
-        <h3 class="location__sub">Հարսանյաց հանդես</h3>
+        <h3 class="location__sub">Տոնական երեկո</h3>
         <p class="location__venue">Ohana ռեստորան</p>
 
         <div class="location-slider">
@@ -97,24 +123,70 @@
     </div>
   </section>
 
-  <!-- ════════════ ԾՐԱԳԻՐ ════════════ -->
+  <!-- ════════════ ԵՐԲ, ՈՐՏԵՂ ════════════ -->
   <section class="programme" id="programme">
     <div class="section-inner">
-      <h2 class="section-title programme-title">ԾՐԱԳԻՐ</h2>
-      <ul class="programme__list">
-        <li class="programme__item">
-          <span class="programme__time">15:00</span>
-          <span class="programme__dot"></span>
-          <span class="programme__desc">Պսակադրություն (Գեղարդ)</span>
-        </li>
-        <li class="programme__item">
-          <span class="programme__time">18:00</span>
-          <span class="programme__dot"></span>
-          <span class="programme__desc">Հարսանյաց հանդես (Ohana)</span>
-        </li>
-      </ul>
+      <h2 class="section-title programme-title">Երբ, Որտեղ</h2>
+      <div class="programme__cards">
+
+        <!-- Պսակադրություն -->
+        <div class="programme__card">
+          <div class="programme__icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Cross -->
+              <line x1="32" y1="6" x2="32" y2="30" stroke="#ff8d21" stroke-width="3" stroke-linecap="round"/>
+              <line x1="22" y1="14" x2="42" y2="14" stroke="#ff8d21" stroke-width="3" stroke-linecap="round"/>
+              <!-- Church roof -->
+              <polyline points="12,34 32,18 52,34" stroke="#ff8d21" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <!-- Church walls -->
+              <rect x="14" y="34" width="36" height="22" rx="1" stroke="#ff8d21" stroke-width="3" fill="none"/>
+              <!-- Door -->
+              <path d="M26 56 L26 46 Q32 40 38 46 L38 56" stroke="#ff8d21" stroke-width="2.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="programme__card-body">
+            <div class="programme__card-time">14:30</div>
+            <div class="programme__card-title">Պսակադրություն</div>
+            <div class="programme__card-place">Գեղարդ վանական համալիր</div>
+          </div>
+        </div>
+
+        <div class="programme__connector">
+          <div class="programme__connector-line"></div>
+          <span class="programme__connector-dot">♥</span>
+          <div class="programme__connector-line"></div>
+        </div>
+
+        <!-- Տոնական երեկո -->
+        <div class="programme__card">
+          <div class="programme__icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Wine glasses clinking -->
+              <!-- Left glass -->
+              <path d="M18 10 L14 28 Q14 36 20 36 L20 50" stroke="#ff8d21" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+              <line x1="16" y1="50" x2="24" y2="50" stroke="#ff8d21" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="M14 28 Q14 36 20 36 Q26 36 26 28" stroke="#ff8d21" stroke-width="2.8" fill="none"/>
+              <!-- Right glass -->
+              <path d="M46 10 L50 28 Q50 36 44 36 L44 50" stroke="#ff8d21" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+              <line x1="40" y1="50" x2="48" y2="50" stroke="#ff8d21" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="M50 28 Q50 36 44 36 Q38 36 38 28" stroke="#ff8d21" stroke-width="2.8" fill="none"/>
+              <!-- Sparkles -->
+              <line x1="32" y1="8" x2="32" y2="4" stroke="#ff8d21" stroke-width="2" stroke-linecap="round"/>
+              <line x1="28" y1="10" x2="25" y2="7" stroke="#ff8d21" stroke-width="2" stroke-linecap="round"/>
+              <line x1="36" y1="10" x2="39" y2="7" stroke="#ff8d21" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="programme__card-body">
+            <div class="programme__card-time">17:00</div>
+            <div class="programme__card-title">Տոնական երեկո</div>
+            <div class="programme__card-place">Ohana ռեստորան</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
+
 
 
 
