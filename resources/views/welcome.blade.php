@@ -86,7 +86,7 @@
   <!-- ════════════ ՎԱՅՐԵՐ ════════════ -->
   <section class="location" id="location">
     <div class="section-inner">
-      <h2 class="section-title location-title">Օրվա Ծրագիր</h2>
+      <h2 class="section-title location-title">Օրվա մանրամասներ</h2>
 
       <!-- Եկեղեցի -->
       <div class="location__block">
@@ -147,7 +147,7 @@
           </div>
           <div class="programme__card-body">
             <div class="programme__card-time">14:30</div>
-            <div class="programme__card-title">Պսակադրություն</div>
+            <div class="programme__card-title" style="font-weight:700">Պսակադրություն</div>
             <div class="programme__card-place">Գեղարդ վանական համալիր</div>
           </div>
         </div>
@@ -202,7 +202,7 @@
           </div>
           <div class="programme__card-body">
             <div class="programme__card-time">17:00</div>
-            <div class="programme__card-title">Տոնական երեկո</div>
+            <div class="programme__card-title" style="font-weight:700">Տոնական երեկո</div>
             <div class="programme__card-place">Ohana yvn</div>
           </div>
         </div>
