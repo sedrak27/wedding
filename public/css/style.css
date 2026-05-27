@@ -95,6 +95,12 @@ a   { color: inherit; text-decoration: none; }
   opacity: 1;
 }
 
+/* Հրավեր & 2026 — սև */
+.greeting .section-title-script,
+.calendar-section .section-title-script {
+  color: #1a1a1a;
+}
+
 /* ── Buttons ──────────────────────────────────────────── */
 .btn {
   display: inline-block;
@@ -419,99 +425,106 @@ a   { color: inherit; text-decoration: none; }
   background: var(--cream);
 }
 
+/* ── Timeline layout ─────────────────────────────────── */
 .programme__cards {
   display: flex;
   flex-direction: column;
   gap: 0;
-  align-items: center;
+  max-width: 380px;
+  margin: 0 auto;
 }
 
-.programme__card {
+/* Each row = left column (icon+line) + right column (content) */
+.programme__item {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 20px;
-  background: var(--white);
-  border-radius: 20px;
-  padding: 24px 28px;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 6px 28px rgba(255,141,33,.1);
-  border: 1px solid #ff8d21;
-  transition: transform .25s, box-shadow .25s;
-}
-.programme__card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(255,141,33,.18);
 }
 
-.programme__icon {
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  background: transparent;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-.programme__icon--duo {
-  gap: 2px;
-}
-.programme__icon--glasses {
-  gap: 4px;
-  padding: 8px;
-}
-.programme__icon svg,
-.programme__icon i {
-  width: 38px;
-  height: 38px;
-  font-size: 38px;
-  color: #ff8d21;
-}
-.programme__icon--duo i {
-  width: 26px;
-  height: 26px;
-  font-size: 26px;
-}
-
-.programme__card-body {
-  text-align: left;
-}
-.programme__card-time {
-  font-family: var(--ff-serif);
-  font-size: 1.35rem;
-  color: #ff8d21;
-  font-weight: 500;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.programme__card-title {
-  font-family: var(--ff-serif);
-  font-size: 1.05rem;
-  color: #2e2e2e;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-.programme__card-place {
-  font-family: var(--ff-sans);
-  font-size: .85rem;
-  color: #ff8d21;
-  letter-spacing: .04em;
-  font-weight: 600;
-}
-
-/* connector between cards */
-.programme__connector {
+/* Left column: icon + line stacked vertically */
+.programme__left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4px 0;
+  flex-shrink: 0;
 }
-.programme__connector-dotted {
-  width: 0;
-  height: 32px;
-  border-left: 2px dotted rgba(220, 102, 1, 0.45);
+
+/* Circular icon */
+.programme__icon {
+  width: 72px;
+  height: 72px;
+  background: #fff9f0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 141, 33, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  flex-shrink: 0;
+}
+.programme__icon--glasses {
+  gap: 4px;
+  padding: 10px;
+}
+.programme__icon svg,
+.programme__icon i {
+  width: 36px;
+  height: 36px;
+  font-size: 36px;
+  color: #ff8d21;
+}
+
+/* Vertical line — grows to fill all remaining height */
+.programme__line {
+  flex: 1;
+  width: 2px;
+  background: rgba(255, 141, 33, 0.3);
+  min-height: 24px;
+  margin: 6px 0;
+}
+
+/* Right column: text content */
+.programme__card-body {
+  text-align: left;
+  padding-top: 8px;
+  padding-bottom: 20px;
+  flex: 1;
+}
+
+/* Time pill badge */
+.programme__card-time {
+  display: inline-block;
+  font-family: var(--ff-serif);
+  font-size: .9rem;
+  color: #fff;
+  background: #ff8d21;
+  font-weight: 500;
+  line-height: 1;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  letter-spacing: .04em;
+}
+.programme__card-title {
+  font-family: var(--ff-serif);
+  font-size: 1.1rem;
+  color: #2e2e2e;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.programme__card-place {
+  font-family: var(--ff-sans);
+  font-size: .88rem;
+  color: #ff8d21;
+  letter-spacing: .02em;
+  font-weight: 600;
+  line-height: 1.65;
+}
+.programme__card-desc {
+  color: #2e2e2e;
+  font-weight: 400;
+  letter-spacing: .01em;
 }
 
 /* dark variant — Տոնական երեկո */
@@ -544,7 +557,7 @@ a   { color: inherit; text-decoration: none; }
   background: var(--cream);
   color: var(--text);
 }
-.countdown .section-title { color: #ff8d21; }
+.countdown .section-title { color: #1a1a1a; }
 .countdown .section-title-script { color: #ff8d21; opacity: 0.9; }
 
 .countdown__grid {
@@ -883,4 +896,14 @@ a   { color: inherit; text-decoration: none; }
     max-width: 500px;
     margin: 0 auto;
   }
+}
+
+/* ════════════════════════════════════════════════════════
+   SCROLL REVEAL — Belleame-style continuous animation
+   Elements start transparent/small at bottom,
+   become fully opaque/normal at viewport center
+   ════════════════════════════════════════════════════════ */
+.scroll-reveal {
+  will-change: transform, opacity;
+  transition: opacity 0.12s ease-out, transform 0.12s ease-out;
 }

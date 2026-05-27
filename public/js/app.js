@@ -53,29 +53,43 @@
   setInterval(tick, 1000);
 })();
 
-/* ── Scroll Reveal ────────────────────────────────────── */
-(function initReveal() {
-  const targets = document.querySelectorAll(
-    '.greeting, .calendar-section, .location, .programme,' +
-    '.countdown, .dresscode, .contacts, .rsvp, .footer,' +
-    '.date-block, .calendar, .programme__item, .dresscode__swatch'
-  );
+/* ── Scroll Reveal (Belleame-style continuous) ────────── */
+(function initScrollReveal() {
+  // Gather all elements to animate
+  const targets = document.querySelectorAll('.scroll-reveal');
 
-  targets.forEach(el => el.classList.add('reveal'));
+  function updateAnimations() {
+    const vh = window.innerHeight;
+    // Element reaches full visibility when its top is at 45% from bottom of viewport
+    const triggerLine = vh * 0.45;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
+    targets.forEach(function(el) {
+      const rect = el.getBoundingClientRect();
+      const distFromBottom = vh - rect.top;
 
-  targets.forEach(el => observer.observe(el));
+      // progress: 0 = just entered bottom, 1 = reached trigger line
+      let p = distFromBottom / triggerLine;
+      p = Math.max(0, Math.min(1, p));
+
+      const opacity   = 0.08 + 0.92 * p;          // 0.08 → 1.0
+      const scale     = 0.88 + 0.12 * p;           // 0.88 → 1.0
+      const translateY = 40 * (1 - p);             // 40px → 0
+
+      el.style.opacity   = opacity;
+      el.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+    });
+  }
+
+  let rafId;
+  window.addEventListener('scroll', function() {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(updateAnimations);
+  }, { passive: true });
+
+  window.addEventListener('resize', updateAnimations, { passive: true });
+
+  // Initial run
+  updateAnimations();
 })();
 
 /* ── RSVP Form ────────────────────────────────────────── */
