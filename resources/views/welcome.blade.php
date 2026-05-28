@@ -38,6 +38,11 @@
     </div>
   </section>
 
+  <!-- ════ PHOTO DIVIDER 1 ════ -->
+  <div class="photo-divider">
+    <img src="{{ asset('images/couple/IMG_8361.JPG') }}" alt="" />
+  </div>
+
   <!-- ════════════ ՕՐԱՑՈՒՅՑ ════════════ -->
   <section class="calendar-section" id="calendar">
     <div class="section-inner">
@@ -83,15 +88,18 @@
     </div>
   </section>
 
-  <!-- ════════════ ՎԱՅՐԵՐ ════════════ -->
+  <!-- ════ PHOTO DIVIDER 2 ════ -->
+  <div class="photo-divider">
+    <img src="{{ asset('images/couple/IMG_8362.JPG') }}" alt="" />
+  </div>
+
   <section class="location" id="location">
     <div class="section-inner">
       <h2 class="section-title location-title scroll-reveal">Օրվա մանրամասներ</h2>
 
       <!-- Եկեղեցի -->
       <div class="location__block scroll-reveal">
-        <h3 class="location__sub">Պսակադրություն</h3>
-        <p class="location__venue">Գեղարդ վանական համալիր</p>
+        <p class="location__desc location__desc--large">Մեր միության սուրբ արարողությունը տեղի կունենա<br><span class="location__desc--orange">Գեղարդ վանական համալիրում</span></p>
 
         <div class="location-slider">
           <img src="{{ asset('images/church/1.jpg') }}" class="slider-img active" />
@@ -108,8 +116,7 @@
 
       <!-- Ռեստորան -->
       <div class="location__block scroll-reveal">
-        <h3 class="location__sub">Տոնական երեկո</h3>
-        <p class="location__venue">Ohana yvn</p>
+        <p class="location__desc location__desc--large">Այս գեղեցիկ օրը<br>միասին կշարունակենք <span class="location__desc--orange">Ohana Yvn</span>-ում</p>
 
         <div class="location-slider">
           <img src="{{ asset('images/restaurant/1.jpg') }}" class="slider-img active" />
@@ -127,7 +134,7 @@
   <!-- ════════════ ԵՐԲ, ՈՐՏԵՂ ════════════ -->
   <section class="programme" id="programme">
     <div class="section-inner">
-      <h2 class="section-title programme-title">Երբ, Որտեղ</h2>
+      <h2 class="section-title programme-title scroll-reveal">Երբ, Որտեղ</h2>
       <div class="programme__cards">
 
         <!-- Պսակադրություն -->
@@ -220,19 +227,10 @@
 
 
   
-  <!-- ════════════ ԼՈՒՍԱՆԿԱՐՆԵՐ ════════════ -->
-  <section class="gallery" id="gallery">
-    <div class="section-inner">
-      <div class="gallery__grid">
-        <img src="{{ asset('images/couple/IMG_8361.JPG') }}" alt="Photo 1" class="gallery__img scroll-reveal">
-        <img src="{{ asset('images/couple/IMG_8362.JPG') }}" alt="Photo 2" class="gallery__img scroll-reveal">
-        <img src="{{ asset('images/couple/IMG_8363.JPG') }}" alt="Photo 3" class="gallery__img scroll-reveal">
-        <img src="{{ asset('images/couple/IMG_8364.JPG') }}" alt="Photo 4" class="gallery__img scroll-reveal">
-        <img src="{{ asset('images/couple/IMG_8366.JPG') }}" alt="Photo 5" class="gallery__img scroll-reveal">
-        <img src="{{ asset('images/couple/IMG_8401.JPG') }}" alt="Photo 6" class="gallery__img scroll-reveal">
-      </div>
-    </div>
-  </section>
+  <!-- ════ PHOTO DIVIDER 3 ════ -->
+  <div class="photo-divider">
+    <img src="{{ asset('images/couple/IMG_8363.JPG') }}" alt="" />
+  </div>
 
   <!-- ════════════ ՀԱՍՏԱՏՈՒՄ ════════════ -->
   <section class="rsvp" id="rsvp">
