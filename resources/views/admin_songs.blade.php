@@ -45,9 +45,20 @@
                                 <td><strong>{{ $song->name }}</strong></td>
                                 <td>{{ $song->desired_song }}</td>
                                 <td>
-                                    <a href="https://www.youtube.com/results?search_query={{ urlencode($song->desired_song) }}" target="_blank" class="song-link">
-                                        ▶️ Փնտրել YouTube-ում
-                                    </a>
+                                    @php
+                                        $normalized = str_ireplace([',', ';', "\n", "\r", ' and ', ' ու ', ' և '], '|', $song->desired_song);
+                                        $songList = array_filter(array_map('trim', explode('|', $normalized)));
+                                    @endphp
+                                    
+                                    @if(count($songList) > 0)
+                                        @foreach($songList as $singleSong)
+                                            <a href="https://www.youtube.com/results?search_query={{ urlencode($singleSong) }}" target="_blank" class="song-link d-block mb-1">
+                                                ▶️ Փնտրել «{{ \Illuminate\Support\Str::limit($singleSong, 25) }}»
+                                            </a>
+                                        @endforeach
+                                    @else
+                                        <span class="text-muted">-</span>
+                                    @endif
                                 </td>
                             </tr>
                             @empty
