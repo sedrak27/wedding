@@ -39,7 +39,7 @@
   </section>
 
   <!-- ════ PHOTO DIVIDER 1 ════ -->
-  <div class="photo-divider">
+  <div class="photo-divider scroll-reveal">
     <img src="{{ asset('images/couple/IMG_8361.JPG') }}" alt="" />
   </div>
 
@@ -89,7 +89,7 @@
   </section>
 
   <!-- ════ PHOTO DIVIDER 2 ════ -->
-  <div class="photo-divider">
+  <div class="photo-divider scroll-reveal">
     <img src="{{ asset('images/couple/IMG_8362.JPG') }}" alt="" />
   </div>
 
@@ -116,7 +116,7 @@
 
       <!-- Ռեստորան -->
       <div class="location__block scroll-reveal">
-        <p class="location__desc location__desc--large">Այս գեղեցիկ օրը<br>միասին կշարունակենք <span class="location__desc--orange">Ohana Yvn</span>-ում</p>
+        <p class="location__desc location__desc--large">Իսկ այս գեղեցիկ օրը<br>միասին կշարունակենք <span class="location__desc--orange">«Ohana Yvn»</span>-ում</p>
 
         <div class="location-slider">
           <img src="{{ asset('images/restaurant/1.jpg') }}" class="slider-img active" />
@@ -130,6 +130,11 @@
       </div>
     </div>
   </section>
+
+  <!-- ════ PHOTO DIVIDER 3 ════ -->
+  <div class="photo-divider scroll-reveal">
+    <img src="{{ asset('images/couple/IMG_8363.JPG') }}" alt="" />
+  </div>
 
   <!-- ════════════ ԵՐԲ, ՈՐՏԵՂ ════════════ -->
   <section class="programme" id="programme">
@@ -158,9 +163,6 @@
           <div class="programme__card-body">
             <div class="programme__card-time">14:30</div>
             <div class="programme__card-title" style="font-weight:700">Պսակադրություն</div>
-            <div class="programme__card-place">
-              <span class="programme__card-desc">Մեր միության սուրբ արարողությունը տեղի կունենա </span><span>Գեղարդ վանական համալիրում</span>
-            </div>
           </div>
         </div>
 
@@ -211,8 +213,7 @@
           <div class="programme__card-body">
             <div class="programme__card-time">17:00</div>
             <div class="programme__card-title" style="font-weight:700">Տոնական երեկո</div>
-            <div class="programme__card-place">
-              <span class="programme__card-desc">Այս գեղեցիկ օրը<br>միասին կշարունակենք </span><span>Ohana Yvn</span><span class="programme__card-desc">-ում</span>
+
             </div>
           </div>
         </div>
@@ -227,10 +228,6 @@
 
 
   
-  <!-- ════ PHOTO DIVIDER 3 ════ -->
-  <div class="photo-divider">
-    <img src="{{ asset('images/couple/IMG_8363.JPG') }}" alt="" />
-  </div>
 
   <!-- ════════════ ՀԱՍՏԱՏՈՒՄ ════════════ -->
   <section class="rsvp" id="rsvp">
@@ -274,6 +271,11 @@
       </div>
     </div>
   </section>
+
+  <!-- ════ PHOTO DIVIDER 4 ════ -->
+  <div class="photo-divider scroll-reveal">
+    <img src="{{ asset('images/couple/IMG_8364.JPG') }}" alt="" />
+  </div>
 
   <script src="{{ asset('js/app.js') }}?v=1.6"></script>
 </body>

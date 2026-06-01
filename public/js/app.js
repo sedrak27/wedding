@@ -77,6 +77,7 @@
 
       el.style.opacity   = opacity;
       el.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+      el.style.setProperty('--scroll-p', p);
     });
   }
 
