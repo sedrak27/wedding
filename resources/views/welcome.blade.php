@@ -26,7 +26,6 @@
       <p class="hero__label">Հարսանեկան Հրավեր</p>
       <h1 class="hero__names">Սեդրակ <span style="font-family: sans-serif; font-weight: normal;">&</span> Գոհար</h1>
     </div>
-    <div class="hero__scroll-hint">↓</div>
   </section>
 
   <!-- ════════════ ՈՂՋՈՒՅՆ ════════════ -->

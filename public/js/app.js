@@ -175,16 +175,16 @@ function handleRsvp(event) {
   });
 }
 
-/* ── Parallax Hero (subtle) ───────────────────────────── */
-(function initParallax() {
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    hero.style.backgroundPositionY = `calc(0% + ${y * 0.2}px)`;
-  }, { passive: true });
-})();
+/* ── Parallax Hero (disabled) ───────────────────────────── */
+// (function initParallax() {
+//   const hero = document.querySelector('.hero');
+//   if (!hero) return;
+// 
+//   window.addEventListener('scroll', () => {
+//     const y = window.scrollY;
+//     hero.style.backgroundPositionY = `calc(0% + ${y * 0.2}px)`;
+//   }, { passive: true });
+// })();
 
 /* ── Location Sliders ────────────────────────────────── */
 (function initSliders() {
