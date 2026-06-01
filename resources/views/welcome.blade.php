@@ -125,9 +125,9 @@
         <p class="location__time" style="font-weight:700; color:#ff8d21; font-size:1.2rem; margin-bottom: 20px;">17:00</p>
 
         <div class="location-slider">
-          <img src="{{ asset('images/restaurant/1.jpg') }}" class="slider-img active" />
-          <img src="{{ asset('images/restaurant/2.jpg') }}" class="slider-img" />
-          <img src="{{ asset('images/restaurant/3.jpeg') }}" class="slider-img" />
+          <img src="{{ asset('images/restaurant/3.webp') }}" class="slider-img active" />
+          <img src="{{ asset('images/restaurant/1.webp') }}" class="slider-img" />
+          <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img" />
         </div>
 
         <div>
