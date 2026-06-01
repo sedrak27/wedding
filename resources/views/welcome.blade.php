@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Noto+Serif+Armenian:wght@200;300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 6 }}" />
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 8 }}" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧡</text></svg>">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
@@ -103,14 +103,14 @@
       <!-- Եկեղեցի -->
       <div class="location__block scroll-reveal">
         <p class="location__desc location__desc--large">Մեր միության սուրբ արարողությունը տեղի կունենա<br><span class="location__desc--orange">Գեղարդ վանական համալիրում</span></p>
-        <p class="location__time" style="font-weight:700; color:#ff8d21; font-size:1.2rem; margin-bottom: 20px;">14:30</p>
+        <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.2rem;"></i> <span style="font-weight: 700;">14:30</span></div>
 
         <div class="location-slider">
           <img src="{{ asset('images/church/IMG_8321.webp') }}" class="slider-img active" />
         </div>
 
         <div>
-          <a href="https://www.google.com/maps/place/Geghard/@40.1404412,44.8185299,17z/" target="_blank" class="btn btn--outline">Ուղղություն</a>
+          <a href="https://www.google.com/maps/place/Geghard/@40.1404412,44.8185299,17z/" target="_blank" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px;"><i class="ph ph-map-pin" style="font-size: 1.2rem;"></i> Ուղղություն</a>
         </div>
       </div>
 
@@ -119,14 +119,14 @@
       <!-- Ռեստորան -->
       <div class="location__block scroll-reveal">
         <p class="location__desc location__desc--large">Իսկ այս գեղեցիկ օրը<br>միասին կշարունակենք <span class="location__desc--orange">«Ohana Yvn»</span>-ում</p>
-        <p class="location__time" style="font-weight:700; color:#ff8d21; font-size:1.2rem; margin-bottom: 20px;">17:00</p>
+        <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.2rem;"></i> <span style="font-weight: 700;">17:00</span></div>
 
         <div class="location-slider">
           <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img active" />
         </div>
 
         <div>
-          <a href="https://maps.app.goo.gl/yk5dm6ve2nmBvW8fA" target="_blank" class="btn btn--outline">Ուղղություն</a>
+          <a href="https://maps.app.goo.gl/yk5dm6ve2nmBvW8fA" target="_blank" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px;"><i class="ph ph-map-pin" style="font-size: 1.2rem;"></i> Ուղղություն</a>
         </div>
       </div>
     </div>

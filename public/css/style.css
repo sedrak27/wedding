@@ -900,8 +900,8 @@ a   { color: inherit; text-decoration: none; }
   height: 250px;
   margin: 30px auto;
   position: relative;
-  border-radius: 20px;
-  border: 1px solid #ff8d21;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 141, 33, 0.5);
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
