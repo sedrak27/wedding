@@ -16,7 +16,7 @@
 <body>
 
   <!-- ════════════ ԳԼԽԱՎՈՐ ════════════ -->
-  <section class="hero" id="hero" style="background: #f5e8cc url('{{ asset('images/couple/IMG_8365.JPG') }}') center center/contain no-repeat;">
+  <section class="hero" id="hero" style="background: #f5e8cc url('{{ asset('images/couple/IMG_8365.webp') }}') center center/contain no-repeat;">
     <div class="hero__overlay" style="background: rgba(255, 141, 33, 0.2);"></div>
     <div class="hero__content">
       <p class="hero__label">Հարսանեկան Հրավեր</p>
@@ -40,7 +40,7 @@
 
   <!-- ════ PHOTO DIVIDER 1 ════ -->
   <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8361.JPG') }}" alt="" />
+    <img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="" />
   </div>
 
   <!-- ════════════ ՕՐԱՑՈՒՅՑ ════════════ -->
@@ -90,7 +90,7 @@
 
   <!-- ════ PHOTO DIVIDER 2 ════ -->
   <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8362.JPG') }}" alt="" />
+    <img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="" />
   </div>
 
   <section class="location" id="location">
@@ -102,9 +102,9 @@
         <p class="location__desc location__desc--large">Մեր միության սուրբ արարողությունը տեղի կունենա<br><span class="location__desc--orange">Գեղարդ վանական համալիրում</span></p>
 
         <div class="location-slider">
-          <img src="{{ asset('images/church/1.jpg') }}" class="slider-img active" />
-          <img src="{{ asset('images/church/2.jpeg') }}" class="slider-img" />
-          <img src="{{ asset('images/church/3.jpg') }}" class="slider-img" />
+          <img src="{{ asset('images/church/IMG_8318.webp') }}" class="slider-img active" />
+          <img src="{{ asset('images/church/IMG_8321.webp') }}" class="slider-img" />
+          <img src="{{ asset('images/church/IMG_8324.webp') }}" class="slider-img" />
         </div>
 
         <div>
@@ -133,7 +133,7 @@
 
   <!-- ════ PHOTO DIVIDER 3 ════ -->
   <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8363.JPG') }}" alt="" />
+    <img src="{{ asset('images/couple/IMG_8363.webp') }}" alt="" />
   </div>
 
   <!-- ════════════ ԵՐԲ, ՈՐՏԵՂ ════════════ -->
@@ -272,9 +272,9 @@
     </div>
   </section>
 
-  <!-- ════ PHOTO DIVIDER 4 ════ -->
-  <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8364.JPG') }}" alt="" />
+  <!-- ════ PHOTO DIVIDER 4 (Bottom) ════ -->
+  <div class="photo-divider scroll-reveal" style="margin-top: 40px; margin-bottom: 0;">
+    <img src="{{ asset('images/couple/IMG_8364.webp') }}" alt="" />
   </div>
 
   <script src="{{ asset('js/app.js') }}?v=1.6"></script>
