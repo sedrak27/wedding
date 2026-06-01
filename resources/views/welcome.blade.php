@@ -106,9 +106,7 @@
         <p class="location__time" style="font-weight:700; color:#ff8d21; font-size:1.2rem; margin-bottom: 20px;">14:30</p>
 
         <div class="location-slider">
-          <img src="{{ asset('images/church/2.webp') }}" class="slider-img active" />
-          <img src="{{ asset('images/church/IMG_8321.webp') }}" class="slider-img" />
-          <img src="{{ asset('images/church/3.webp') }}" class="slider-img" />
+          <img src="{{ asset('images/church/IMG_8321.webp') }}" class="slider-img active" />
         </div>
 
         <div>
@@ -124,9 +122,7 @@
         <p class="location__time" style="font-weight:700; color:#ff8d21; font-size:1.2rem; margin-bottom: 20px;">17:00</p>
 
         <div class="location-slider">
-          <img src="{{ asset('images/restaurant/3.webp') }}" class="slider-img active" />
-          <img src="{{ asset('images/restaurant/1.webp') }}" class="slider-img" />
-          <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img" />
+          <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img active" />
         </div>
 
         <div>
@@ -189,6 +185,6 @@
     <img src="{{ asset('images/couple/IMG_8364.webp') }}" alt="" />
   </div>
 
-  <script src="{{ asset('js/app.js') }}?v={{ time() }}"></script>
+  <script src="{{ asset('js/app.js') }}?v={{ time() + 7 }}"></script>
 </body>
 </html>

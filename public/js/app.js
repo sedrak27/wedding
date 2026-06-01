@@ -192,6 +192,8 @@ function handleRsvp(event) {
   
   sliders.forEach(slider => {
     const images = slider.querySelectorAll('.slider-img');
+    if (images.length <= 1) return;
+
     let currentIndex = 0;
 
     setInterval(() => {
