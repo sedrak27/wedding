@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Հարսանեկան Հրավեր | Սեդրակ & Գոհար</title>
   <meta name="description" content="Սեդրակի և Գոհարի հարսանեկան հրավիրատոմս — 20 Հունիսի 2026" />
+  <meta property="og:title" content="Հարսանեկան Հրավեր | Սեդրակ & Գոհար" />
+  <meta property="og:description" content="Սեդրակի և Գոհարի հարսանեկան հրավիրատոմս" />
+  <meta property="og:image" content="{{ asset('images/couple/IMG_8365.webp') }}" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Noto+Serif+Armenian:wght@200;300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -40,7 +44,7 @@
 
   <!-- ════ PHOTO DIVIDER 1 ════ -->
   <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="" />
+    <img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="" />
   </div>
 
   <!-- ════════════ ՕՐԱՑՈՒՅՑ ════════════ -->
@@ -90,7 +94,7 @@
 
   <!-- ════ PHOTO DIVIDER 2 ════ -->
   <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="" />
+    <img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="" />
   </div>
 
   <section class="location" id="location">
@@ -100,12 +104,12 @@
       <!-- Եկեղեցի -->
       <div class="location__block scroll-reveal">
         <p class="location__desc location__desc--large">Մեր միության սուրբ արարողությունը տեղի կունենա<br><span class="location__desc--orange">Գեղարդ վանական համալիրում</span></p>
-        <p class="location__time" style="font-weight:700; color:#ff8d21; font-size:1.2rem; margin-bottom: 20px;">Ժամը 14:30</p>
+        <p class="location__time" style="font-weight:700; color:#ff8d21; font-size:1.2rem; margin-bottom: 20px;">14:30</p>
 
         <div class="location-slider">
-          <img src="{{ asset('images/church/IMG_8318.webp') }}" class="slider-img active" />
+          <img src="{{ asset('images/church/2.webp') }}" class="slider-img active" />
           <img src="{{ asset('images/church/IMG_8321.webp') }}" class="slider-img" />
-          <img src="{{ asset('images/church/IMG_8324.webp') }}" class="slider-img" />
+          <img src="{{ asset('images/church/3.webp') }}" class="slider-img" />
         </div>
 
         <div>
@@ -118,7 +122,7 @@
       <!-- Ռեստորան -->
       <div class="location__block scroll-reveal">
         <p class="location__desc location__desc--large">Իսկ այս գեղեցիկ օրը<br>միասին կշարունակենք <span class="location__desc--orange">«Ohana Yvn»</span>-ում</p>
-        <p class="location__time" style="font-weight:700; color:#ff8d21; font-size:1.2rem; margin-bottom: 20px;">Ժամը 17:00-ից</p>
+        <p class="location__time" style="font-weight:700; color:#ff8d21; font-size:1.2rem; margin-bottom: 20px;">17:00</p>
 
         <div class="location-slider">
           <img src="{{ asset('images/restaurant/1.jpg') }}" class="slider-img active" />
