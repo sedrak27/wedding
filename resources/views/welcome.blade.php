@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Noto+Serif+Armenian:wght@200;300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 8 }}" />
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 11 }}" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧡</text></svg>">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
@@ -41,10 +41,7 @@
     </div>
   </section>
 
-  <!-- ════ PHOTO DIVIDER 1 ════ -->
-  <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="" />
-  </div>
+
 
   <!-- ════════════ ՕՐԱՑՈՒՅՑ ════════════ -->
   <section class="calendar-section" id="calendar">
@@ -91,10 +88,7 @@
     </div>
   </section>
 
-  <!-- ════ PHOTO DIVIDER 2 ════ -->
-  <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="" />
-  </div>
+
 
   <section class="location" id="location">
     <div class="section-inner">
@@ -103,14 +97,14 @@
       <!-- Եկեղեցի -->
       <div class="location__block scroll-reveal">
         <p class="location__desc location__desc--large">Մեր միության սուրբ արարողությունը տեղի կունենա<br><span class="location__desc--orange">Գեղարդ վանական համալիրում</span></p>
-        <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.2rem;"></i> <span style="font-weight: 700;">14:30</span></div>
+        <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 24px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.1rem;"></i> <span style="font-weight: 700;">14:30</span></div>
 
         <div class="location-slider">
           <img src="{{ asset('images/church/IMG_8321.webp') }}" class="slider-img active" />
         </div>
 
         <div>
-          <a href="https://www.google.com/maps/place/Geghard/@40.1404412,44.8185299,17z/" target="_blank" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px;"><i class="ph ph-map-pin" style="font-size: 1.2rem;"></i> Ուղղություն</a>
+          <a href="https://www.google.com/maps/place/Geghard/@40.1404412,44.8185299,17z/" target="_blank" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 24px;"><i class="ph ph-map-pin" style="font-size: 1.1rem;"></i> Ուղղություն</a>
         </div>
       </div>
 
@@ -119,23 +113,32 @@
       <!-- Ռեստորան -->
       <div class="location__block scroll-reveal">
         <p class="location__desc location__desc--large">Իսկ այս գեղեցիկ օրը<br>միասին կշարունակենք <span class="location__desc--orange">«Ohana Yvn»</span>-ում</p>
-        <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.2rem;"></i> <span style="font-weight: 700;">17:00</span></div>
+        <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 24px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.1rem;"></i> <span style="font-weight: 700;">17:00</span></div>
 
         <div class="location-slider">
           <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img active" />
         </div>
 
         <div>
-          <a href="https://maps.app.goo.gl/yk5dm6ve2nmBvW8fA" target="_blank" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px;"><i class="ph ph-map-pin" style="font-size: 1.2rem;"></i> Ուղղություն</a>
+          <a href="https://maps.app.goo.gl/yk5dm6ve2nmBvW8fA" target="_blank" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 24px;"><i class="ph ph-map-pin" style="font-size: 1.1rem;"></i> Ուղղություն</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════ PHOTO DIVIDER 3 ════ -->
-  <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8363.webp') }}" alt="" />
-  </div>
+  <!-- ════════════ ՊԱՏԿԵՐԱՍՐԱՀ ════════════ -->
+  <section class="masonry-section" id="gallery">
+    <div class="section-inner">
+      <h2 class="section-title programme-title scroll-reveal" style="margin-bottom: 40px;">Մեր Նկարները</h2>
+      <div class="masonry-grid">
+        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="" /></div>
+        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="" /></div>
+        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8363.webp') }}" alt="" /></div>
+        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8364.webp') }}" alt="" /></div>
+        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8365.webp') }}" alt="" /></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ════════════ ՀԱՍՏԱՏՈՒՄ ════════════ -->
   <section class="rsvp" id="rsvp">
@@ -180,11 +183,8 @@
     </div>
   </section>
 
-  <!-- ════ PHOTO DIVIDER 4 (Bottom) ════ -->
-  <div class="photo-divider scroll-reveal" style="margin-top: 40px; margin-bottom: 0;">
-    <img src="{{ asset('images/couple/IMG_8364.webp') }}" alt="" />
-  </div>
 
-  <script src="{{ asset('js/app.js') }}?v={{ time() + 7 }}"></script>
+
+  <script src="{{ asset('js/app.js') }}?v={{ time() + 8 }}"></script>
 </body>
 </html>

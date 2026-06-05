@@ -108,7 +108,7 @@ a   { color: inherit; text-decoration: none; }
   left: -50px;
   bottom: -6px;
   width: calc(100% + 100px);
-  height: 3px;
+  height: 1px;
   background: linear-gradient(90deg, rgba(255,141,33,0) 0%, rgba(255,141,33,1) 50%, rgba(255,141,33,0) 100%);
   transform: scaleX(var(--scroll-p, 0));
   transform-origin: center;
@@ -619,23 +619,23 @@ a   { color: inherit; text-decoration: none; }
 .countdown__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  max-width: 500px;
+  gap: 8px;
+  max-width: 320px;
   margin: 0 auto;
 }
 .countdown__item {
   background: #ff8d21;
   border: 1px solid rgba(220,102,1,.3);
   border-radius: var(--radius);
-  padding: 18px 8px;
+  padding: 8px 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
 }
 .countdown__num {
   font-family: var(--ff-serif);
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 300;
   color: var(--cream);
   line-height: 1;
@@ -649,7 +649,7 @@ a   { color: inherit; text-decoration: none; }
   100% { transform: translateY(0);    opacity: 1; }
 }
 .countdown__label {
-  font-size: .6rem;
+  font-size: .5rem;
   letter-spacing: .2em;
   color: rgba(255,244,223,.75);
   text-transform: uppercase;
@@ -901,7 +901,6 @@ a   { color: inherit; text-decoration: none; }
   margin: 30px auto;
   position: relative;
   border-radius: 10px;
-  border: 1px solid rgba(255, 141, 33, 0.5);
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
@@ -955,6 +954,40 @@ a   { color: inherit; text-decoration: none; }
   object-fit: contain;
 }
 
+/* ════════════════════════════════════════════════════════
+   MASONRY GALLERY
+   ════════════════════════════════════════════════════════ */
+.masonry-section {
+  padding: var(--section-pad);
+  background: var(--cream);
+}
+.masonry-grid {
+  column-count: 2;
+  column-gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.masonry-item {
+  margin-bottom: 15px;
+  break-inside: avoid;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 3;
+    column-gap: 20px;
+  }
+  .masonry-item {
+    margin-bottom: 20px;
+  }
+}
 
 /* ════════════════════════════════════════════════════════
    RESPONSIVE & FULL-WIDTH OPTIMIZATION
