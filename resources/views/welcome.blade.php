@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Noto+Serif+Armenian:wght@200;300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 49 }}" />
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 50 }}" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧡</text></svg>">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
@@ -323,7 +323,7 @@
           <img src="{{ asset('images/church/3.webp') }}" class="slider-img" />
         </div>
 
-        <a href="https://www.google.com/maps/place/Geghard/@40.1404412,44.8185299,17z/" target="_blank" class="location-clean__btn">
+        <a href="https://www.google.com/maps/place/geghard+monastery/data=!4m2!3m1!1s0x406aaead91206219:0x4003cbe690889756?sa=X&ved=1t:155783&ictx=111" target="_blank" class="location-clean__btn">
           <i class="ph ph-map-pin"></i> Ուղղություն
         </a>
       </div>
@@ -414,6 +414,6 @@
     </div>
   </section>
 
-  <script src="{{ asset('js/app.js') }}?v={{ time() + 49 }}"></script>
+  <script src="{{ asset('js/app.js') }}?v={{ time() + 50 }}"></script>
 </body>
 </html>
