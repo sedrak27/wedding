@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="15 16 64 65">
+  <defs>
+    <!-- Mask to hide the right ring's lines only where they cross the left ring's solid band -->
+    <mask id="left-ring-band-mask">
+      <!-- By default, make everything visible (white) -->
+      <rect x="0" y="0" width="100" height="100" fill="white" />
+      
+      <!-- Hide the area of the left ring's outer circle and shoulders (black) -->
+      <path d="M 30 30 C 26 35 17.5 42 17.5 54 C 17.5 65.3 26.7 74.5 38 74.5 C 49.3 74.5 58.5 65.3 58.5 54 C 58.5 42 50 35 46 30 Z" fill="black" stroke="black" stroke-width="2.5" />
+      
+      <!-- Unhide the center hole of the left ring (white) so the right ring is visible inside it -->
+      <circle cx="38" cy="54" r="14.75" fill="white" />
+    </mask>
+  </defs>
+
+  <!-- Right Ring (Tilted, with mask applied to hide it behind left ring's band) -->
+  <g mask="url(#left-ring-band-mask)">
+    <!-- Outer circle of right ring -->
+    <circle cx="58" cy="60" r="19" stroke="#ff8d21" stroke-width="2.5" fill="none" />
+    <!-- Inner circle of right ring -->
+    <circle cx="58" cy="60" r="15" stroke="#ff8d21" stroke-width="2.5" fill="none" />
+  </g>
+
+  <!-- Left Ring (On top of right ring) -->
+  <!-- Outer circle & shoulders -->
+  <path d="M 30 30 C 26 35 17.5 42 17.5 54 C 17.5 65.3 26.7 74.5 38 74.5 C 49.3 74.5 58.5 65.3 58.5 54 C 58.5 42 50 35 46 30" stroke="#ff8d21" stroke-width="2.5" fill="none" />
+  <!-- Inner circle -->
+  <circle cx="38" cy="54" r="15" stroke="#ff8d21" stroke-width="2.5" fill="none" />
+
+  <!-- Diamond (At the top of the left ring) -->
+  <!-- Outer diamond outline -->
+  <path d="M 33 19 L 43 19 L 48 25 L 38 32 L 28 25 Z" stroke="#ff8d21" stroke-width="2.5" fill="none" stroke-linejoin="round" />
+  <!-- Horizontal middle line -->
+  <line x1="28" y1="25" x2="48" y2="25" stroke="#ff8d21" stroke-width="2.5" />
+  <!-- Vertical facet lines -->
+  <line x1="33" y1="19" x2="33" y2="25" stroke="#ff8d21" stroke-width="2" />
+  <line x1="43" y1="19" x2="43" y2="25" stroke="#ff8d21" stroke-width="2" />
+  <!-- Lower triangular facets -->
+  <path d="M 33 25 L 38 32 L 43 25" stroke="#ff8d21" stroke-width="2" fill="none" stroke-linejoin="round" />
+</svg>

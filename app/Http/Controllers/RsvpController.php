@@ -11,13 +11,21 @@ class RsvpController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|min:3|max:255',
+            'name' => [
+                'required',
+                'string',
+                'max:255',
+                'regex:/^[a-zA-Zа-яА-ЯёЁ\x{0530}-\x{058F}]+(?:\s+[a-zA-Zа-яА-ЯёЁ\x{0530}-\x{058F}]+)+$/u'
+            ],
             'attend' => 'required|in:yes,no',
             'guest_count' => 'required_if:attend,yes|nullable|numeric|min:1|max:20',
             'invited_by' => 'required|string|in:sedrak,gohar',
             'desired_song' => 'nullable|string|max:255',
         ], [
-            'name.required' => 'Խնդրում ենք լրացնել անունը:',
+            'name.required' => 'Խնդրում ենք լրացնել անունը և ազգանունը:',
+            'name.regex' => 'Խնդրում ենք նշել և՛ անունը, և՛ ազգանունը:',
+            'name.max' => 'Անվանումը չափազանց երկար է:',
+            'name.string' => 'Անունը պետք է լինի տեքստ:',
             'attend.required' => 'Խնդրում ենք նշել մասնակցությունը:',
             'invited_by.required' => 'Խնդրում ենք նշել, թե ում կողմից եք հրավիրված:',
             'guest_count.required_if' => 'Խնդրում ենք նշել հյուրերի քանակը:',

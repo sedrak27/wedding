@@ -236,3 +236,21 @@ function handleRsvp(event) {
   attendRadios.forEach(r => r.addEventListener('change', toggle));
   toggle(); // initial state
 })();
+
+/* ── RSVP Input Constraints ─────────────────────────── */
+(function initRsvpInputConstraints() {
+  const nameInput = document.getElementById('rsvp-name');
+  const countInput = document.getElementById('rsvp-count');
+
+  if (nameInput) {
+    nameInput.addEventListener('input', function() {
+      this.value = this.value.replace(/[^a-zA-Zа-яА-ЯёЁ\u0530-\u058F\s]/g, '');
+    });
+  }
+
+  if (countInput) {
+    countInput.addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+  }
+})();
