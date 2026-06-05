@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Noto+Serif+Armenian:wght@200;300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 44 }}" />
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 49 }}" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧡</text></svg>">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
@@ -212,30 +212,6 @@
       text-transform: uppercase;
       color: rgba(255,244,223,0.7);
     }
-    #hero-bottom {
-      min-height: 120vw;
-      margin-top: -2px;
-    }
-    #hero-bottom .hero__content {
-      width: 100%;
-      max-width: 80vw;
-      margin: 0 auto;
-      box-sizing: border-box;
-      padding: 20px;
-    }
-    #hero-bottom .hero__names {
-      font-size: clamp(1.1rem, 5.2vw, 2.2rem) !important;
-      white-space: nowrap;
-    }
-    @media (min-width: 600px) {
-      #hero-bottom {
-        min-height: 70vh !important;
-        margin-top: -2px !important;
-      }
-      #hero-bottom .hero__content {
-        max-width: calc(70vh * 2 / 3) !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -250,8 +226,8 @@
   </section>
 
   <!-- ════════════ ORANGE BLOCK (Greeting + Date + Countdown + Calendar) ════════════ -->
-  <section class="orange-block scroll-reveal" id="event-details">
-    <div class="section-inner">
+  <section class="orange-block" id="event-details">
+    <div class="section-inner scroll-reveal">
 
       <!-- Greeting text -->
       <p class="greeting__text" style="color: rgba(255,244,223,0.92); margin-bottom: 40px;">
@@ -382,16 +358,15 @@
     <img src="{{ asset('images/couple/IMG_8363.webp') }}" alt="Սեդրակ և Գոհար" />
   </div>
 
-  <!-- ════════════ ORANGE RSVP BLOCK ════════════ -->
-  <section class="rsvp-orange scroll-reveal" id="rsvp">
-    <div class="section-inner">
+  <section class="rsvp-orange" id="rsvp">
+    <div class="section-inner scroll-reveal">
 
       <div class="rsvp-orange__head">
         <div class="rsvp-orange__title">Հաստատում</div>
         <div class="rsvp-orange__sub">Խնդրում ենք հաստատել ձեր ներկայությունը</div>
       </div>
 
-      <div class="rsvp__card scroll-reveal">
+      <div class="rsvp__card">
         <form class="rsvp__form" id="rsvp-form" onsubmit="handleRsvp(event)">
           <div class="rsvp__group">
             <label class="rsvp__label">Նշեք ձեր անուն ազգանունը</label>
@@ -432,14 +407,13 @@
     </div>
   </section>
 
-  <!-- ════════════ PHOTO 3 (HERO STYLE) ════════════ -->
-  <section class="hero scroll-reveal" id="hero-bottom" style="background: #f5e8cc url('{{ asset('images/couple/IMG_8364.webp') }}') center center/contain no-repeat; width: 100%;">
-    <div class="hero__overlay" style="background: rgba(255, 141, 33, 0.2);"></div>
+  <section class="hero" id="hero-bottom" style="background: #f5e8cc url('{{ asset('images/couple/IMG_8364.webp') }}') center center/contain no-repeat; margin-top: -2px;">
+    <div class="hero__overlay"></div>
     <div class="hero__content">
-      <h2 class="hero__names" style="text-shadow: 0 4px 24px rgba(0,0,0,0.4);">ՍԻՐՈՎ ՍՊԱՍՈՒՄ ԵՆՔ</h2>
+      <h2 class="hero__names" style="font-size: clamp(1.8rem, 6.5vw, 3rem);">ՍԻՐՈՎ ՍՊԱՍՈՒՄ ԵՆՔ</h2>
     </div>
   </section>
 
-  <script src="{{ asset('js/app.js') }}?v={{ time() + 44 }}"></script>
+  <script src="{{ asset('js/app.js') }}?v={{ time() + 49 }}"></script>
 </body>
 </html>
