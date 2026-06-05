@@ -12,14 +12,194 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Noto+Serif+Armenian:wght@200;300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 11 }}" />
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() + 20 }}" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧡</text></svg>">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <style>
+    /* ── ORANGE BLOCK ─────────────────────────────────── */
+    .orange-block {
+      background: #ff8d21;
+      color: #fff4df;
+      width: 100%;
+      padding: 60px 24px;
+    }
+    .orange-block .section-inner { max-width: 440px; margin: 0 auto; text-align: center; }
+
+    /* Date row */
+    .date-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 30px 0;
+    }
+    .date-row__line { flex: 1; height: 1px; background: rgba(255,244,223,0.45); }
+    .date-row__label { font-family: 'Cormorant Garamond', serif; letter-spacing: 4px; font-size: 0.78rem; text-transform: uppercase; color: #fff4df; }
+    .date-big {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #fff4df;
+    }
+    .date-big__num {
+      font-size: 4rem;
+      font-family: 'Great Vibes', cursive;
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* Countdown inline */
+    .countdown-inline { margin: 40px 0; }
+    .countdown-inline__label {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 4px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: #fff4df;
+      margin-bottom: 16px;
+    }
+    .countdown-inline__digits {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      line-height: 1;
+      color: #fff4df;
+    }
+    .countdown-inline__unit { display: flex; flex-direction: column; align-items: center; }
+    .countdown-inline__sublabel {
+      font-size: 0.6rem;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+      text-transform: lowercase;
+      color: rgba(255,244,223,0.65);
+      margin-top: 6px;
+    }
+    .countdown-inline__sep { color: rgba(255,244,223,0.5); margin-top: 4px; }
+
+    /* Calendar inside orange block */
+    .cal-orange { margin-top: 40px; }
+    .cal-orange__head {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 3px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: rgba(255,244,223,0.75);
+      margin-bottom: 4px;
+    }
+    .cal-orange__subhead {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 2px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: rgba(255,244,223,0.5);
+      margin-bottom: 20px;
+    }
+    .cal-orange .calendar {
+      background: transparent !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      color: #fff4df !important;
+    }
+    .cal-orange .cal-header span { color: rgba(255,244,223,0.65) !important; }
+    .cal-orange .cal-grid span { color: rgba(255,244,223,0.7) !important; }
+    .cal-orange .cal-day--active {
+      background: #fff4df !important;
+      color: #ff8d21 !important;
+      font-weight: 700 !important;
+    }
+
+    /* Location section */
+    .location-clean { padding: 60px 24px; text-align: center; background: #fff4df; }
+    .location-clean .section-inner { max-width: 440px; margin: 0 auto; }
+    .location-clean__icon { font-size: 2.2rem; color: #ff8d21; margin-bottom: 10px; }
+    .location-clean__title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4rem;
+      color: #2E2E2E;
+      margin-bottom: 12px;
+    }
+    .location-clean__time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      color: #2E2E2E;
+      margin-bottom: 4px;
+    }
+    .location-clean__venue {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #6b5a45;
+      margin-bottom: 24px;
+    }
+    .location-clean__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #2E2E2E;
+      padding: 10px 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #2E2E2E;
+      border-radius: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+    .location-clean__btn:hover { background: #ff8d21; border-color: #ff8d21; color: #fff4df; }
+    .location-clean__divider { width: 1px; height: 50px; background: rgba(255,141,33,0.3); margin: 50px auto; }
+
+    /* Photo divider */
+    .photo-divider { width: 100%; display: block; }
+    .photo-divider img { width: 100%; display: block; object-fit: cover; max-height: 85vh; }
+
+    /* Orange RSVP block */
+    .rsvp-orange { background: #ff8d21; padding: 60px 24px; }
+    .rsvp-orange .section-inner { max-width: 440px; margin: 0 auto; text-align: center; }
+    .rsvp-orange .rsvp__card { background: transparent; box-shadow: none; padding: 0; border: none; }
+    .rsvp-orange .rsvp__label { color: #fff4df; }
+    .rsvp-orange .rsvp__input-line { color: #fff4df; border-bottom-color: rgba(255,244,223,0.4); background: transparent; }
+    .rsvp-orange .rsvp__input-line::placeholder { color: rgba(255,244,223,0.5); }
+    .rsvp-orange .rsvp__option { border-color: rgba(255,244,223,0.4); color: #fff4df; }
+    .rsvp-orange .rsvp__option:has(input:checked) { background: #fff4df; border-color: #fff4df; color: #ff8d21; }
+    .rsvp-orange .btn-send { background: #fff4df; color: #ff8d21; border: none; }
+    .rsvp-orange .btn-send:hover { background: #2E2E2E; color: #fff4df; }
+    .rsvp-orange .rsvp__error { color: rgba(255,244,223,0.8); }
+    .rsvp-orange .rsvp__success { color: #fff4df; }
+
+    .rsvp-orange__head {
+      margin-bottom: 40px;
+    }
+    .rsvp-orange__icon { font-size: 2rem; color: #fff4df; margin-bottom: 8px; }
+    .rsvp-orange__title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.6rem;
+      color: #fff4df;
+      margin-bottom: 8px;
+    }
+    .rsvp-orange__sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,244,223,0.7);
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ════════════ ԳԼԽԱՎՈՐ ════════════ -->
+  <!-- ════════════ HERO ════════════ -->
   <section class="hero" id="hero" style="background: #f5e8cc url('{{ asset('images/couple/IMG_8365.webp') }}') center center/contain no-repeat;">
     <div class="hero__overlay" style="background: rgba(255, 141, 33, 0.2);"></div>
     <div class="hero__content">
@@ -28,121 +208,132 @@
     </div>
   </section>
 
-  <!-- ════════════ ՈՂՋՈՒՅՆ ════════════ -->
-  <section class="greeting scroll-reveal" id="greeting">
+  <!-- ════════════ PHOTO 1 ════════════ -->
+  <div class="photo-divider scroll-reveal">
+    <img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="Սեդրակ և Գոհար" />
+  </div>
+
+  <!-- ════════════ ORANGE BLOCK (Greeting + Date + Countdown + Calendar) ════════════ -->
+  <section class="orange-block scroll-reveal" id="event-details">
     <div class="section-inner">
-      <div class="section-title-script scroll-reveal">Հրավեր</div>
-      <h2 class="section-title scroll-reveal">Սիրելի Հյուրեր</h2>
-      <p class="greeting__text scroll-reveal">
+
+      <!-- Greeting text -->
+      <p class="greeting__text" style="color: rgba(255,244,223,0.92); margin-bottom: 40px;">
         Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու մեր կյանքի ամենաերջանիկ և հիշարժան օրվան՝ մեր հարսանիքին։
         Ձեր ներկայությունն ու ջերմ բարեմաղթանքները մեզ համար անչափ կարևոր են և մեր ուրախությունն ավելի լիարժեք ու գեղեցիկ կդարձնեն։
         Անհամբեր սպասում ենք Ձեզ՝ միասին կիսելու սիրով ու երջանկությամբ լի այս առանձնահատուկ օրը։
       </p>
-    </div>
-  </section>
 
+      <!-- Date display -->
+      <div class="date-row">
+        <div class="date-row__line"></div>
+        <div class="date-row__label">ՀՈՒՆԻՍ</div>
+        <div class="date-row__line"></div>
+      </div>
+      <div class="date-big">
+        <span>ՇԱԲԱԹ</span>
+        <span class="date-big__num">20</span>
+        <span>2026</span>
+      </div>
+      <div class="date-row" style="margin-top: 20px;">
+        <div class="date-row__line"></div>
+        <div class="date-row__line" style="opacity: 0;"></div>
+        <div class="date-row__line"></div>
+      </div>
 
-
-  <!-- ════════════ ՕՐԱՑՈՒՅՑ ════════════ -->
-  <section class="calendar-section" id="calendar">
-    <div class="section-inner">
-      <h2 class="section-title scroll-reveal">ՀՈՒՆԻՍ</h2>
-      <div class="section-title-script scroll-reveal">2026</div>
-      <div class="calendar scroll-reveal">
-        <div class="cal-header">
-          <span>ԵՐԿ</span><span>ԵՐՔ</span><span>ՉՈՐ</span><span>ՀՆԳ</span><span>ՈՒՐԲ</span><span>ՇԱԲ</span><span>ԿԻՐ</span>
-        </div>
-        <div class="cal-grid">
-          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-          <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-          <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span class="cal-day--active">20</span><span>21</span>
-          <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
-          <span>29</span><span>30</span>
+      <!-- Countdown -->
+      <div class="countdown-inline">
+        <div class="countdown-inline__label">ՍՊԱՍՈՒՄ ԵՆՔ</div>
+        <div class="countdown-inline__digits">
+          <div class="countdown-inline__unit">
+            <span id="cd-days">00</span>
+            <span class="countdown-inline__sublabel">օր</span>
+          </div>
+          <span class="countdown-inline__sep">:</span>
+          <div class="countdown-inline__unit">
+            <span id="cd-hours">00</span>
+            <span class="countdown-inline__sublabel">ժամ</span>
+          </div>
+          <span class="countdown-inline__sep">:</span>
+          <div class="countdown-inline__unit">
+            <span id="cd-mins">00</span>
+            <span class="countdown-inline__sublabel">րոպե</span>
+          </div>
+          <span class="countdown-inline__sep">:</span>
+          <div class="countdown-inline__unit">
+            <span id="cd-secs">00</span>
+            <span class="countdown-inline__sublabel">վրկ</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ════════════ ՀԵՏՀԱՇՎԱՐԿ ════════════ -->
-  <section class="countdown" id="countdown">
-    <div class="section-inner">
-      <h2 class="section-title scroll-reveal">Մնաց</h2>
-      <div class="countdown__grid">
-        <div class="countdown__item scroll-reveal">
-          <span class="countdown__num" id="cd-days">--</span>
-          <span class="countdown__label">Օր</span>
-        </div>
-        <div class="countdown__item scroll-reveal" style="transition-delay: 0.1s;">
-          <span class="countdown__num" id="cd-hours">--</span>
-          <span class="countdown__label">Ժամ</span>
-        </div>
-        <div class="countdown__item scroll-reveal" style="transition-delay: 0.2s;">
-          <span class="countdown__num" id="cd-mins">--</span>
-          <span class="countdown__label">Րոպե</span>
-        </div>
-        <div class="countdown__item scroll-reveal" style="transition-delay: 0.3s;">
-          <span class="countdown__num" id="cd-secs">--</span>
-          <span class="countdown__label">Վայրկյան</span>
+      <!-- Calendar -->
+      <div class="cal-orange">
+        <div class="cal-orange__head">ՄԵԾ ՕՐԸ</div>
+        <div class="cal-orange__subhead">ՀՈՒՆԻՍ 2026</div>
+        <div class="calendar">
+          <div class="cal-header">
+            <span>ԵՐԿ</span><span>ԵՐՔ</span><span>ՉՈՐ</span><span>ՀՆԳ</span><span>ՈՒՐԲ</span><span>ՇԱԲ</span><span>ԿԻՐ</span>
+          </div>
+          <div class="cal-grid">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+            <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+            <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span class="cal-day--active">20</span><span>21</span>
+            <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
+            <span>29</span><span>30</span>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
-
-
-  <section class="location" id="location">
+  <!-- ════════════ LOCATION ════════════ -->
+  <section class="location-clean" id="location">
     <div class="section-inner">
-      <h2 class="section-title location-title scroll-reveal">Օրվա մանրամասներ</h2>
 
       <!-- Եկեղեցի -->
-      <div class="location__block scroll-reveal">
-        <p class="location__desc location__desc--large">Մեր միության սուրբ արարողությունը տեղի կունենա<br><span class="location__desc--orange">Գեղարդ վանական համալիրում</span></p>
-        <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 24px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.1rem;"></i> <span style="font-weight: 700;">14:30</span></div>
-
-        <div class="location-slider">
-          <img src="{{ asset('images/church/IMG_8321.webp') }}" class="slider-img active" />
-        </div>
-
-        <div>
-          <a href="https://www.google.com/maps/place/Geghard/@40.1404412,44.8185299,17z/" target="_blank" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 24px;"><i class="ph ph-map-pin" style="font-size: 1.1rem;"></i> Ուղղություն</a>
-        </div>
+      <div class="scroll-reveal">
+        <div class="location-clean__icon"><i class="ph ph-church"></i></div>
+        <div class="location-clean__title">Պսակադրություն</div>
+        <div class="location-clean__time">14:30</div>
+        <div class="location-clean__venue">Գեղարդ Վանական Համալիր</div>
+        <a href="https://www.google.com/maps/place/Geghard/@40.1404412,44.8185299,17z/" target="_blank" class="location-clean__btn">
+          <i class="ph ph-map-pin"></i> Ուղղություն
+        </a>
       </div>
 
-      <div class="location__divider scroll-reveal"></div>
+      <div class="location-clean__divider"></div>
 
       <!-- Ռեստորան -->
-      <div class="location__block scroll-reveal">
-        <p class="location__desc location__desc--large">Իսկ այս գեղեցիկ օրը<br>միասին կշարունակենք <span class="location__desc--orange">«Ohana Yvn»</span>-ում</p>
-        <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 24px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.1rem;"></i> <span style="font-weight: 700;">17:00</span></div>
-
-        <div class="location-slider">
-          <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img active" />
-        </div>
-
-        <div>
-          <a href="https://maps.app.goo.gl/yk5dm6ve2nmBvW8fA" target="_blank" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 24px;"><i class="ph ph-map-pin" style="font-size: 1.1rem;"></i> Ուղղություն</a>
-        </div>
+      <div class="scroll-reveal">
+        <div class="location-clean__icon"><i class="ph ph-champagne"></i></div>
+        <div class="location-clean__title">Հարսանյաց Հանդես</div>
+        <div class="location-clean__time">17:00</div>
+        <div class="location-clean__venue">Ohana Yvn</div>
+        <a href="https://maps.app.goo.gl/yk5dm6ve2nmBvW8fA" target="_blank" class="location-clean__btn">
+          <i class="ph ph-map-pin"></i> Ուղղություն
+        </a>
       </div>
+
     </div>
   </section>
 
-  <!-- ════════════ ՊԱՏԿԵՐԱՍՐԱՀ ════════════ -->
-  <section class="masonry-section" id="gallery">
-    <div class="section-inner">
-      <h2 class="section-title programme-title scroll-reveal" style="margin-bottom: 40px;">Մեր Նկարները</h2>
-      <div class="masonry-grid">
-        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="" /></div>
-        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="" /></div>
-        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8363.webp') }}" alt="" /></div>
-        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8364.webp') }}" alt="" /></div>
-        <div class="masonry-item scroll-reveal"><img src="{{ asset('images/couple/IMG_8365.webp') }}" alt="" /></div>
-      </div>
-    </div>
-  </section>
+  <!-- ════════════ PHOTO 2 ════════════ -->
+  <div class="photo-divider scroll-reveal">
+    <img src="{{ asset('images/couple/IMG_8363.webp') }}" alt="Սեդրակ և Գոհար" />
+  </div>
 
-  <!-- ════════════ ՀԱՍՏԱՏՈՒՄ ════════════ -->
-  <section class="rsvp" id="rsvp">
+  <!-- ════════════ ORANGE RSVP BLOCK ════════════ -->
+  <section class="rsvp-orange scroll-reveal" id="rsvp">
     <div class="section-inner">
+
+      <div class="rsvp-orange__head">
+        <div class="rsvp-orange__icon"><i class="ph ph-calendar-check"></i></div>
+        <div class="rsvp-orange__title">Հաստատում</div>
+        <div class="rsvp-orange__sub">Խնդրում ենք հաստատել ձեր ներկայությունը</div>
+      </div>
+
       <div class="rsvp__card scroll-reveal">
         <form class="rsvp__form" id="rsvp-form" onsubmit="handleRsvp(event)">
           <div class="rsvp__group">
@@ -173,18 +364,22 @@
           </div>
           <div class="rsvp__group" id="song-wrapper">
             <label class="rsvp__label">Ի՞նչ երգ կցանկանայիք հնչեր</label>
-            <input type="text" id="rsvp-song" class="rsvp__input-line" placeholder="Նշեք Ձեր նախընտրած երգը" />
+            <input type="text" id="rsvp-song" class="rsvp__input-line" placeholder="Նշեք ձեր 坪ախև坪տրած երգը" />
             <div class="rsvp__error" id="err-desired_song"></div>
           </div>
           <button type="submit" class="btn-send" id="rsvp-submit">Ուղարկել</button>
         </form>
-        <p class="rsvp__success" id="rsvp-success" style="display:none">🧡 Շնորհակալություն հաստատման համար:</p>
+        <p class="rsvp__success" id="rsvp-success" style="display:none; color: #fff4df; margin-top: 20px;">🧡 Շնորհակալություն հաստատման համար:</p>
       </div>
+
     </div>
   </section>
 
+  <!-- ════════════ PHOTO 3 ════════════ -->
+  <div class="photo-divider scroll-reveal">
+    <img src="{{ asset('images/couple/IMG_8364.webp') }}" alt="" />
+  </div>
 
-
-  <script src="{{ asset('js/app.js') }}?v={{ time() + 8 }}"></script>
+  <script src="{{ asset('js/app.js') }}?v={{ time() + 20 }}"></script>
 </body>
 </html>
