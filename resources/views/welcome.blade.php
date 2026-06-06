@@ -117,11 +117,13 @@
   <!-- ════ PHOTO DIVIDER 2 ════ -->
   <div class="swiper gallery-swiper scroll-reveal">
     <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="Gallery Image 8" /></div>
       <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="Gallery Image 4" /></div>
       <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8619.webp') }}" alt="Gallery Image 5" /></div>
       <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8620.webp') }}" alt="Gallery Image 6" /></div>
       <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8621.webp') }}" alt="Gallery Image 7" /></div>
       <!-- Duplicated for smooth infinite loop -->
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="Gallery Image 8" /></div>
       <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="Gallery Image 4" /></div>
       <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8619.webp') }}" alt="Gallery Image 5" /></div>
       <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8620.webp') }}" alt="Gallery Image 6" /></div>
