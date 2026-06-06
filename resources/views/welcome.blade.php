@@ -217,7 +217,7 @@
           <div class="timeline-body">
             <span class="timeline-time">21:00</span>
             <div class="timeline-content">
-              <h3 style="white-space: nowrap; font-size: clamp(0.7rem, 3.5vw, 0.95rem);">ՏՈՐԹԻ ԿՏՐՄԱՆ ԱՐԱՐՈՂՈՒԹՅՈՒՆ</h3>
+              <h3>ՏՈՐԹԻ ԿՏՐՄԱՆ ԱՐԱՐՈՂՈՒԹՅՈՒՆ</h3>
               <p>«Ohana Yvn» ռեստորան</p>
             </div>
           </div>
@@ -270,7 +270,7 @@
   </section>
 
   <!-- ════ PHOTO DIVIDER 4 (Bottom) ════ -->
-  <section class="hero scroll-reveal" style="background: #f5e8cc url('{{ asset('images/couple/IMG_8364.webp') }}') center center/contain no-repeat; height: 100vh; position: relative;">
+  <section class="hero scroll-reveal" style="background: #f5e8cc url('{{ asset('images/couple/IMG_8364.webp') }}') center center/contain no-repeat; position: relative;">
     <div class="hero__overlay" style="background: rgba(255, 141, 33, 0.2);"></div>
     <div class="hero__content" style="justify-content: flex-end; padding-bottom: 10vh;">
       <h2 class="hero__names" style="font-size: clamp(2.5rem, 9vw, 4rem);">Սիրով սպասում ենք</h2>
