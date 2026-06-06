@@ -108,7 +108,7 @@ a   { color: inherit; text-decoration: none; }
   left: -50px;
   bottom: -6px;
   width: calc(100% + 100px);
-  height: 3px;
+  height: 1px;
   background: linear-gradient(90deg, rgba(255,141,33,0) 0%, rgba(255,141,33,1) 50%, rgba(255,141,33,0) 100%);
   transform: scaleX(var(--scroll-p, 0));
   transform-origin: center;
@@ -636,23 +636,23 @@ a   { color: inherit; text-decoration: none; }
 .countdown__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  max-width: 500px;
+  gap: 8px;
+  max-width: 340px;
   margin: 0 auto;
 }
 .countdown__item {
   background: #ffa447;
   border: 1px solid rgba(220,102,1,.3);
-  border-radius: var(--radius);
-  padding: 18px 8px;
+  border-radius: 10px;
+  padding: 8px 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
 }
 .countdown__num {
   font-family: var(--ff-serif);
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: 300;
   color: var(--cream);
   line-height: 1;
@@ -666,8 +666,8 @@ a   { color: inherit; text-decoration: none; }
   100% { transform: translateY(0);    opacity: 1; }
 }
 .countdown__label {
-  font-size: .6rem;
-  letter-spacing: .2em;
+  font-size: .5rem;
+  letter-spacing: .15em;
   color: rgba(255,244,223,.75);
   text-transform: uppercase;
 }
@@ -1050,7 +1050,7 @@ a   { color: inherit; text-decoration: none; }
   padding: 20px 0;
 }
 
-/* ── Mobile: simple left-column list ── */
+/* ── Always: centered icon + alternating left/right layout ── */
 .timeline::before {
   content: '';
   position: absolute;
@@ -1058,24 +1058,27 @@ a   { color: inherit; text-decoration: none; }
   bottom: 0;
   width: 1px;
   background: #ffa447;
-  left: 27px; /* icon half-width = center of 54px icon */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .timeline-item {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 44px;
+  display: grid;
+  grid-template-columns: 1fr 46px 1fr;
+  align-items: center;
   gap: 0;
+  margin-bottom: 36px;
 }
 .timeline-item:last-child {
   margin-bottom: 0;
 }
 
 .timeline-icon {
-  flex: 0 0 54px;
-  width: 54px;
-  height: 54px;
+  grid-column: 2;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
   background: var(--white);
   border: 1.5px solid #ffa447;
   border-radius: 50%;
@@ -1083,12 +1086,13 @@ a   { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: center;
   color: #ffa447;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   z-index: 2;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   overflow: hidden;
-  padding: 10px;
+  padding: 8px;
   position: relative;
+  margin: 0 auto;
 }
 .timeline-icon img {
   width: 100%;
@@ -1097,50 +1101,44 @@ a   { color: inherit; text-decoration: none; }
   display: block;
 }
 
-.timeline-body {
-  flex: 1;
-  padding-left: 18px;
-  text-align: left;
+/* Odd items: text on LEFT side */
+.timeline-item:nth-child(odd) .timeline-body {
+  grid-column: 1;
+  grid-row: 1;
+  order: -1;
+  text-align: right;
+  padding-left: 0;
+  padding-right: 12px;
 }
 
-/* ── Desktop: 3-column grid, icon pinned in center ── */
-@media (min-width: 600px) {
-  .timeline::before {
-    left: 50%;
-    transform: translateX(-50%);
-  }
+/* Even items: text on RIGHT side */
+.timeline-item:nth-child(even) .timeline-body {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: left;
+  padding-left: 12px;
+  padding-right: 0;
+}
 
+/* ── Large screens: slightly bigger icon and gaps ── */
+@media (min-width: 600px) {
   .timeline-item {
-    display: grid;
     grid-template-columns: 1fr 60px 1fr;
-    align-items: center;
-    gap: 0;
     margin-bottom: 48px;
   }
 
-  /* Icon always goes in middle column */
   .timeline-icon {
-    grid-column: 2;
-    margin: 0 auto;
+    width: 54px;
+    height: 54px;
+    padding: 10px;
   }
 
-  /* Odd items: text on LEFT side */
   .timeline-item:nth-child(odd) .timeline-body {
-    grid-column: 1;
-    grid-row: 1;
-    order: -1;
-    text-align: right;
-    padding-left: 0;
     padding-right: 20px;
   }
 
-  /* Even items: text on RIGHT side */
   .timeline-item:nth-child(even) .timeline-body {
-    grid-column: 3;
-    grid-row: 1;
-    text-align: left;
     padding-left: 20px;
-    padding-right: 0;
   }
 }
 
