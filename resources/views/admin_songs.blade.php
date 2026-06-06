@@ -9,12 +9,12 @@
     <style>
         body { background-color: #fff4df; font-family: 'Montserrat', sans-serif; color: #2E2E2E; }
         .admin-card { border-radius: 15px; border: none; box-shadow: 0 8px 30px rgba(0,0,0,0.05); margin-bottom: 30px; background: white; overflow: hidden; }
-        .table-header { background-color: #ffa447; color: white; padding: 25px; display: flex; justify-content: space-between; align-items: center; }
+        .table-header { background-color: #ff8d21; color: white; padding: 25px; display: flex; justify-content: space-between; align-items: center; }
         .btn-refresh { background-color: rgba(255,255,255,0.2); border: 1px solid white; color: white; border-radius: 10px; padding: 8px 16px; transition: all 0.3s; text-decoration: none; }
-        .btn-refresh:hover { background-color: white; color: #ffa447; }
+        .btn-refresh:hover { background-color: white; color: #ff8d21; }
         .table thead th { background-color: #fafafa; color: #6b5a45; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; padding: 15px; }
         .table tbody td { padding: 15px; border-bottom: 1px solid #f0f0f0; }
-        .song-link { color: #ffa447; font-weight: 500; text-decoration: none; transition: 0.2s; }
+        .song-link { color: #ff8d21; font-weight: 500; text-decoration: none; transition: 0.2s; }
         .song-link:hover { color: #d67115; text-decoration: underline; }
     </style>
 </head>
@@ -49,7 +49,7 @@
                                         $normalized = str_ireplace([',', ';', "\n", "\r", ' and ', ' ու ', ' և '], '|', $song->desired_song);
                                         $songList = array_filter(array_map('trim', explode('|', $normalized)));
                                     @endphp
-                                    
+
                                     @if(count($songList) > 0)
                                         @foreach($songList as $singleSong)
                                             <a href="https://www.youtube.com/results?search_query={{ urlencode($singleSong) }}" target="_blank" class="song-link d-block mb-1">
