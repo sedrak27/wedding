@@ -16,6 +16,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧡</text></svg>">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -41,16 +42,39 @@
     </div>
   </section>
 
-  <!-- ════ PHOTO DIVIDER 1 ════ -->
-  <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="" />
-  </div>
+{{--  <!-- ════ PHOTO DIVIDER 1 ════ -->--}}
+{{--  <div class="swiper gallery-swiper scroll-reveal">--}}
+{{--    <div class="swiper-wrapper">--}}
+{{--      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="Gallery Image 1" /></div>--}}
+{{--      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8363.webp') }}" alt="Gallery Image 2" /></div>--}}
+{{--      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8364.webp') }}" alt="Gallery Image 3" /></div>--}}
+{{--      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="Gallery Image 4" /></div>--}}
+{{--      <!-- Duplicated for smooth infinite loop -->--}}
+{{--      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8362.webp') }}" alt="Gallery Image 1" /></div>--}}
+{{--      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8363.webp') }}" alt="Gallery Image 2" /></div>--}}
+{{--      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8364.webp') }}" alt="Gallery Image 3" /></div>--}}
+{{--      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="Gallery Image 4" /></div>--}}
+{{--    </div>--}}
+{{--  </div>--}}
 
   <!-- ════════════ ՕՐԱՑՈՒՅՑ ════════════ -->
   <section class="calendar-section" id="calendar">
     <div class="section-inner">
-      <h2 class="section-title scroll-reveal">ՀՈՒՆԻՍ</h2>
-      <div class="section-title-script scroll-reveal">2026</div>
+      <div class="flex-title scroll-reveal">
+        <div class="flex-title-line flex-title-line--left"></div>
+        <h2 class="flex-title-text">ՀՈՒՆԻՍ</h2>
+        <div class="flex-title-line flex-title-line--right"></div>
+      </div>
+      <div class="scroll-reveal" style="display: flex; justify-content: center; align-items: baseline; gap: 12px; margin-bottom: 16px; margin-top: -5px;">
+        <span style="font-family: var(--ff-script); font-size: 1.5rem; color: #ffa447;">Շաբաթ</span>
+        <span style="font-family: var(--ff-serif); font-size: 2.6rem; font-weight: 700; color: #ffa447; line-height: 0.8;">20</span>
+        <span style="font-family: var(--ff-script); font-size: 1.5rem; color: #ffa447;">2026</span>
+      </div>
+      <div class="flex-title scroll-reveal" style="margin-bottom: 24px;">
+        <div class="flex-title-line flex-title-line--left"></div>
+        <div style="width: 6px; height: 6px; background: #ffa447; border-radius: 50%; transform: scale(var(--scroll-p, 0)); opacity: var(--scroll-p, 0);"></div>
+        <div class="flex-title-line flex-title-line--right"></div>
+      </div>
       <div class="calendar scroll-reveal">
         <div class="cal-header">
           <span>ԵՐԿ</span><span>ԵՐՔ</span><span>ՉՈՐ</span><span>ՀՆԳ</span><span>ՈՒՐԲ</span><span>ՇԱԲ</span><span>ԿԻՐ</span>
@@ -92,8 +116,18 @@
   </section>
 
   <!-- ════ PHOTO DIVIDER 2 ════ -->
-  <div class="photo-divider scroll-reveal">
-    <img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="" />
+  <div class="swiper gallery-swiper scroll-reveal">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="Gallery Image 4" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8619.JPG') }}" alt="Gallery Image 5" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8620.JPG') }}" alt="Gallery Image 6" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8621.JPG') }}" alt="Gallery Image 7" /></div>
+      <!-- Duplicated for smooth infinite loop -->
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="Gallery Image 4" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8619.JPG') }}" alt="Gallery Image 5" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8620.JPG') }}" alt="Gallery Image 6" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8621.JPG') }}" alt="Gallery Image 7" /></div>
+    </div>
   </div>
 
   <section class="location" id="location">
@@ -102,11 +136,17 @@
 
       <!-- Եկեղեցի -->
       <div class="location__block scroll-reveal">
-        <p class="location__desc location__desc--large">Մեր միության սուրբ արարողությունը տեղի կունենա<br><span class="location__desc--orange">Գեղարդ վանական համալիրում</span></p>
+        <div class="programme__icon" style="margin: 0 auto 20px auto; width: 64px; height: 64px;">
+          <img src="{{ asset('images/icons/wedding-rings.svg') }}" alt="Rings" style="width: 32px; height: 32px;" />
+        </div>
+        <p class="location__address" style="margin-bottom: 12px; color: #2e2e2e; line-height: 1.6;">Մեր միության սուրբ արարողությունը տեղի կունենա<br><span class="location__desc--large location__desc--orange" style="display: block; margin-top: 8px;">Գեղարդ վանական համալիրում</span></p>
+        <p class="location__address" style="margin-bottom: 15px;"><span class="location__desc location__desc--large" style="margin-bottom: 0;">Հասցե՝ </span>ՀՀ, Կոտայքի մարզ, գ. Գողթ</p>
         <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.2rem;"></i> <span style="font-weight: 700;">14:30</span></div>
 
         <div class="location-slider">
           <img src="{{ asset('images/church/IMG_8321.webp') }}" class="slider-img active" />
+          <img src="{{ asset('images/church/2.webp') }}" class="slider-img" />
+          <img src="{{ asset('images/church/3.webp') }}" class="slider-img" />
         </div>
 
         <div>
@@ -118,11 +158,17 @@
 
       <!-- Ռեստորան -->
       <div class="location__block scroll-reveal">
-        <p class="location__desc location__desc--large">Իսկ այս գեղեցիկ օրը<br>միասին կշարունակենք <span class="location__desc--orange">«Ohana Yvn»</span>-ում</p>
+        <div class="programme__icon" style="margin: 0 auto 20px auto; width: 64px; height: 64px;">
+          <img src="{{ asset('images/icons/restaurant.svg') }}" alt="Restaurant" style="width: 32px; height: 32px;" />
+        </div>
+        <p class="location__address" style="margin-bottom: 12px; color: #2e2e2e; line-height: 1.6;">Իսկ այս գեղեցիկ օրը միասին կշարունակենք<br><span class="location__desc--large location__desc--orange" style="display: block; margin-top: 8px;">«Ohana Yvn»-ում</span></p>
+        <p class="location__address" style="margin-bottom: 15px;"><span class="location__desc location__desc--large" style="margin-bottom: 0;">Հասցե՝ </span>ՀՀ, Կոտայքի մարզ, գ. Ջրվեժ, 3-րդ թաղամաս, 7/30</p>
         <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.2rem;"></i> <span style="font-weight: 700;">17:00</span></div>
 
         <div class="location-slider">
-          <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img active" />
+          <img src="{{ asset('images/restaurant/1.webp') }}" class="slider-img active" />
+          <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img" />
+          <img src="{{ asset('images/restaurant/3.webp') }}" class="slider-img" />
         </div>
 
         <div>
@@ -135,7 +181,7 @@
   <!-- ════════════ ԾՐԱԳԻՐ (TIMELINE) ════════════ -->
   <section class="timeline-section" id="timeline">
     <div class="section-inner">
-      <h2 class="section-title scroll-reveal">ՕՐՎԱ ծրագիրը</h2>
+      <h2 class="section-title scroll-reveal">ԵՐԲ, ՈՐՏԵՂ</h2>
 
       <div class="timeline scroll-reveal">
         <div class="timeline-item">
@@ -158,7 +204,7 @@
           <div class="timeline-body">
             <span class="timeline-time">17:00</span>
             <div class="timeline-content">
-              <h3>ՀԱՐՍԱՆՅԱՑ ՀԱՆԴԵՍ</h3>
+              <h3>ՏՈՆԱԿԱՆ ԵՐԵԿՈ</h3>
               <p>Ohana Yvn ռեստորան</p>
             </div>
           </div>
@@ -171,8 +217,8 @@
           <div class="timeline-body">
             <span class="timeline-time">21:00</span>
             <div class="timeline-content">
-              <h3>ՀԱՐՍԱՆԵԿԱՆ ՏՈՐԹ</h3>
-              <p>Տորթի կտրման արարողություն</p>
+              <h3>ՏՈՐԹԻ ԿՏՐՄԱՆ ԱՐԱՐՈՂՈՒԹՅՈՒՆ</h3>
+              <p>Ohana Yvn ռեստորան</p>
             </div>
           </div>
         </div>
@@ -229,6 +275,7 @@
     <span class="photo-divider__text">Սիրով սպասում ենք</span>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="{{ asset('js/app.js') }}?v={{ time() + 7 }}"></script>
 </body>
 </html>

@@ -204,6 +204,33 @@ function handleRsvp(event) {
   });
 })();
 
+/* ── Swiper JS Coverflow Gallery ────────────────────── */
+(function initGallerySwiper() {
+  if (typeof Swiper !== 'undefined') {
+    const swipers = document.querySelectorAll('.gallery-swiper');
+    swipers.forEach(el => {
+      new Swiper(el, {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        coverflowEffect: {
+          rotate: 0,
+          stretch: -20,
+          depth: 150,
+          modifier: 1.5,
+          slideShadows: false,
+        },
+      });
+    });
+  }
+})();
+
 /* ── Dress-code swatch entrance stagger ──────────────── */
 (function staggerSwatches() {
   const swatches = document.querySelectorAll('.dresscode__swatch');
