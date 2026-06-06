@@ -144,8 +144,6 @@
 
         <div class="location-slider">
           <img src="{{ asset('images/church/IMG_8321.webp') }}" class="slider-img active" />
-          <img src="{{ asset('images/church/2.webp') }}" class="slider-img" />
-          <img src="{{ asset('images/church/3.webp') }}" class="slider-img" />
         </div>
 
         <div>
@@ -165,9 +163,7 @@
         <div class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px; cursor: default; pointer-events: none; margin-bottom: 20px;"><i class="ph ph-clock" style="font-size: 1.2rem;"></i> <span style="font-weight: 700;">17:00</span></div>
 
         <div class="location-slider">
-          <img src="{{ asset('images/restaurant/1.webp') }}" class="slider-img active" />
-          <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img" />
-          <img src="{{ asset('images/restaurant/3.webp') }}" class="slider-img" />
+          <img src="{{ asset('images/restaurant/2.webp') }}" class="slider-img active" />
         </div>
 
         <div>
@@ -228,6 +224,7 @@
   <!-- ════════════ ՀԱՍՏԱՏՈՒՄ ════════════ -->
   <section class="rsvp" id="rsvp">
     <div class="section-inner">
+      <h2 class="section-title scroll-reveal" style="margin-bottom: 40px;">ՀԱՍՏԱՏՈՒՄ</h2>
       <div class="rsvp__card scroll-reveal">
         <form class="rsvp__form" id="rsvp-form" onsubmit="handleRsvp(event)">
           <div class="rsvp__group">
@@ -269,7 +266,7 @@
   </section>
 
   <!-- ════ PHOTO DIVIDER 4 (Bottom) ════ -->
-  <section class="hero scroll-reveal" style="background: #f5e8cc url('{{ asset('images/couple/IMG_8364.webp') }}') center center/cover no-repeat; height: 100vh; position: relative;">
+  <section class="hero hero-bottom scroll-reveal" style="background-color: #f5e8cc; background-image: url('{{ asset('images/couple/IMG_8364.webp') }}'); background-repeat: no-repeat; position: relative;">
     <div class="hero__overlay" style="background: rgba(255, 141, 33, 0.2);"></div>
     <div class="hero__content" style="justify-content: flex-end; padding-bottom: 10vh;">
       <h2 class="hero__names" style="font-size: clamp(2.5rem, 9vw, 4rem);">Սիրով սպասում ենք</h2>

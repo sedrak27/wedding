@@ -253,6 +253,17 @@ a   { color: inherit; text-decoration: none; }
   to   { opacity: 1; transform: translateY(0);     }
 }
 
+.hero-bottom {
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .hero-bottom {
+    background-size: contain;
+  }
+}
+
 .hero__label {
   font-family: var(--ff-sans);
   font-size: .72rem;
