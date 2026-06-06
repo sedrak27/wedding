@@ -25,7 +25,7 @@
     <div class="hero__overlay" style="background: rgba(255, 141, 33, 0.2);"></div>
     <div class="hero__content">
       <p class="hero__label">Հարսանեկան Հրավեր</p>
-      <h1 class="hero__names">Սեդրակ <span style="font-family: sans-serif; font-weight: normal;">&</span> Գոհար</h1>
+      <h1 class="hero__names">Սեդրակ և Գոհար</h1>
     </div>
   </section>
 
@@ -119,14 +119,14 @@
   <div class="swiper gallery-swiper scroll-reveal">
     <div class="swiper-wrapper">
       <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="Gallery Image 4" /></div>
-      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8619.JPG') }}" alt="Gallery Image 5" /></div>
-      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8620.JPG') }}" alt="Gallery Image 6" /></div>
-      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8621.JPG') }}" alt="Gallery Image 7" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8619.webp') }}" alt="Gallery Image 5" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8620.webp') }}" alt="Gallery Image 6" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8621.webp') }}" alt="Gallery Image 7" /></div>
       <!-- Duplicated for smooth infinite loop -->
       <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8361.webp') }}" alt="Gallery Image 4" /></div>
-      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8619.JPG') }}" alt="Gallery Image 5" /></div>
-      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8620.JPG') }}" alt="Gallery Image 6" /></div>
-      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8621.JPG') }}" alt="Gallery Image 7" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8619.webp') }}" alt="Gallery Image 5" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8620.webp') }}" alt="Gallery Image 6" /></div>
+      <div class="swiper-slide"><img src="{{ asset('images/couple/IMG_8621.webp') }}" alt="Gallery Image 7" /></div>
     </div>
   </div>
 
@@ -205,7 +205,7 @@
             <span class="timeline-time">17:00</span>
             <div class="timeline-content">
               <h3>ՏՈՆԱԿԱՆ ԵՐԵԿՈ</h3>
-              <p>Ohana Yvn ռեստորան</p>
+              <p>«Ohana Yvn» ռեստորան</p>
             </div>
           </div>
         </div>
@@ -217,8 +217,8 @@
           <div class="timeline-body">
             <span class="timeline-time">21:00</span>
             <div class="timeline-content">
-              <h3>ՏՈՐԹԻ ԿՏՐՄԱՆ ԱՐԱՐՈՂՈՒԹՅՈՒՆ</h3>
-              <p>Ohana Yvn ռեստորան</p>
+              <h3 style="white-space: nowrap; font-size: clamp(0.7rem, 3.5vw, 0.95rem);">ՏՈՐԹԻ ԿՏՐՄԱՆ ԱՐԱՐՈՂՈՒԹՅՈՒՆ</h3>
+              <p>«Ohana Yvn» ռեստորան</p>
             </div>
           </div>
         </div>
@@ -270,10 +270,12 @@
   </section>
 
   <!-- ════ PHOTO DIVIDER 4 (Bottom) ════ -->
-  <div class="photo-divider photo-divider--overlay scroll-reveal" style="margin-top: 40px; margin-bottom: 0;">
-    <img src="{{ asset('images/couple/IMG_8364.webp') }}" alt="" />
-    <span class="photo-divider__text">Սիրով սպասում ենք</span>
-  </div>
+  <section class="hero scroll-reveal" style="background: #f5e8cc url('{{ asset('images/couple/IMG_8364.webp') }}') center center/contain no-repeat; height: 100vh; position: relative;">
+    <div class="hero__overlay" style="background: rgba(255, 141, 33, 0.2);"></div>
+    <div class="hero__content" style="justify-content: flex-end; padding-bottom: 10vh;">
+      <h2 class="hero__names" style="font-size: clamp(2.5rem, 9vw, 4rem);">Սիրով սպասում ենք</h2>
+    </div>
+  </section>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="{{ asset('js/app.js') }}?v={{ time() + 7 }}"></script>

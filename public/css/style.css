@@ -264,11 +264,10 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .hero__names {
-  font-family: var(--ff-serif);
+  font-family: var(--ff-script);
   font-size: clamp(2.8rem, 11vw, 5rem);
   font-weight: 300;
-  font-style: italic;
-  color: var(--white);
+  color: #ffffff;
   line-height: 1.2;
   text-shadow: 0 4px 24px rgba(0,0,0,.25);
   white-space: nowrap;
@@ -580,7 +579,7 @@ a   { color: inherit; text-decoration: none; }
 .programme__icon {
   width: 72px;
   height: 72px;
-  background: #fff9f0;
+  background: var(--cream);
   border-radius: 50%;
   border: 1.5px solid rgba(255, 141, 33, 0.35);
   display: flex;
@@ -1159,7 +1158,7 @@ a   { color: inherit; text-decoration: none; }
   flex: 0 0 46px;
   width: 46px;
   height: 46px;
-  background: var(--white);
+  background: var(--cream);
   border: 1.5px solid #ffa447;
   border-radius: 50%;
   display: flex;
