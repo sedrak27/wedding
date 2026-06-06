@@ -9,15 +9,15 @@
     <style>
         body { background-color: #fff4df; font-family: 'Montserrat', sans-serif; color: #2E2E2E; }
         .admin-card { border-radius: 15px; border: none; box-shadow: 0 8px 30px rgba(0,0,0,0.05); margin-bottom: 30px; background: white; overflow: hidden; }
-        .table-header { background-color: #ff8d21; color: white; padding: 25px; display: flex; justify-content: space-between; align-items: center; }
-        .badge-yes { background-color: #ff8d21; padding: 6px 12px; border-radius: 6px; }
+        .table-header { background-color: #ffa447; color: white; padding: 25px; display: flex; justify-content: space-between; align-items: center; }
+        .badge-yes { background-color: #ffa447; padding: 6px 12px; border-radius: 6px; }
         .badge-no { background-color: #d9534f; padding: 6px 12px; border-radius: 6px; }
         .stat-card { border-radius: 15px; border: none; padding: 25px; color: white; height: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
         .stat-card:hover { transform: translateY(-5px); }
-        .stat-sedrak, .stat-gohar { background: linear-gradient(135deg, #ff8d21 0%, #ffac5e 100%); }
+        .stat-sedrak, .stat-gohar { background: linear-gradient(135deg, #ffa447 0%, #ffac5e 100%); }
         .stat-num { font-size: 2.8rem; font-weight: bold; margin: 10px 0; }
         .btn-refresh { background-color: rgba(255,255,255,0.2); border: 1px solid white; color: white; border-radius: 10px; padding: 8px 16px; transition: all 0.3s; }
-        .btn-refresh:hover { background-color: white; color: #ff8d21; }
+        .btn-refresh:hover { background-color: white; color: #ffa447; }
         .table thead th { background-color: #fafafa; color: #6b5a45; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; padding: 15px; }
         .table tbody td { padding: 15px; border-bottom: 1px solid #f0f0f0; }
     </style>
@@ -127,7 +127,7 @@
     <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" style="border-radius: 20px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
-                <div class="modal-header" style="background: #ff8d21; color: white; border-radius: 20px 20px 0 0;">
+                <div class="modal-header" style="background: #ffa447; color: white; border-radius: 20px 20px 0 0;">
                     <h5 class="modal-title">Խմբագրել RSVP</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -160,7 +160,7 @@
                     </div>
                     <div class="modal-footer border-0 p-4 pt-0">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="border-radius: 10px;">Չեղարկել</button>
-                        <button type="submit" class="btn" style="background: #ff8d21; color: white; border-radius: 10px; padding: 10px 25px;">Պահպանել</button>
+                        <button type="submit" class="btn" style="background: #ffa447; color: white; border-radius: 10px; padding: 10px 25px;">Պահպանել</button>
                     </div>
                 </form>
             </div>

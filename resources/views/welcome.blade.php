@@ -19,7 +19,7 @@
   <style>
     /* ── ORANGE BLOCK ─────────────────────────────────── */
     .orange-block {
-      background: #ff8d21;
+      background: #ffa447;
       color: #fff4df;
       width: 100%;
       padding: 60px 24px;
@@ -114,21 +114,38 @@
     .cal-orange .cal-grid span { color: rgba(255,244,223,0.7) !important; }
     .cal-orange .cal-grid span.cal-day--active,
     .cal-orange .cal-grid .cal-day--active {
-      background: #ffffff !important;
-      color: #e06600 !important;
-      -webkit-text-fill-color: #e06600 !important;
+      background: transparent !important;
+      color: #ffa447 !important;
+      -webkit-text-fill-color: #ffa447 !important;
       font-weight: 900 !important;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.25) !important;
+      box-shadow: none !important;
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cal-orange .cal-grid span.cal-day--active::after,
+    .cal-orange .cal-grid .cal-day--active::after {
+      content: '';
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center center / contain;
+      z-index: -1;
     }
 
     /* Location section */
     .location-clean { padding: 60px 24px; text-align: center; background: #fff4df; }
     .location-clean .section-inner { max-width: 440px; margin: 0 auto; }
-    .location-clean__icon { font-size: 2.2rem; color: #ff8d21; margin-bottom: 10px; }
+    .location-clean__icon { font-size: 2.2rem; color: #ffa447; margin-bottom: 10px; }
     .location-clean__title {
       font-family: var(--ff-script);
       font-size: 2.4rem;
-      color: #ff8d21;
+      color: #ffa447;
       margin-bottom: 12px;
     }
     .location-clean__time {
@@ -150,17 +167,17 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      border: 1px solid #ff8d21;
+      border: 1px solid #ffa447;
       padding: 10px 28px;
       font-family: var(--ff-sans);
       font-size: 0.75rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #ff8d21;
+      color: #ffa447;
       border-radius: 25px;
       transition: background 0.2s, color 0.2s;
     }
-    .location-clean__btn:hover { background: #ff8d21; border-color: #ff8d21; color: #fff4df; }
+    .location-clean__btn:hover { background: #ffa447; border-color: #ffa447; color: #fff4df; }
     .location-clean__divider { width: 1px; height: 50px; background: rgba(255,141,33,0.3); margin: 50px auto; }
 
     /* Photo divider */
@@ -181,7 +198,7 @@
     }
 
     /* Orange RSVP block */
-    .rsvp-orange { background: #ff8d21; padding: 60px 24px; }
+    .rsvp-orange { background: #ffa447; padding: 60px 24px; }
     .rsvp-orange .section-inner { max-width: 440px; margin: 0 auto; text-align: center; }
     .rsvp-orange .rsvp__card { background: transparent; box-shadow: none; padding: 0; border: none; }
     .rsvp-orange .rsvp__label { color: #fff4df; }
@@ -192,7 +209,7 @@
     .rsvp-orange input[type="checkbox"] {
       accent-color: #fff4df;
     }
-    .rsvp-orange .btn-send { background: #fff4df; color: #ff8d21; border: none; }
+    .rsvp-orange .btn-send { background: #fff4df; color: #ffa447; border: none; }
     .rsvp-orange .btn-send:hover { background: #2E2E2E; color: #fff4df; }
     .rsvp-orange .rsvp__error { color: rgba(255,244,223,0.8); }
     .rsvp-orange .rsvp__success { color: #fff4df; }
@@ -215,7 +232,7 @@
 
     /* Timeline Section styles */
     .timeline-section {
-      background: #ff8d21;
+      background: #ffa447;
       padding: 60px 24px;
       text-align: center;
       color: var(--cream);
@@ -252,7 +269,7 @@
       top: 0;
       color: var(--cream);
       font-size: 0.8rem;
-      background: #ff8d21;
+      background: #ffa447;
       padding: 2px 0;
     }
     .timeline-time {
@@ -357,7 +374,7 @@
           <div class="cal-grid">
             <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
             <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-            <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span class="cal-day--active" style="background:#ffffff !important; color:#e06600 !important; font-weight:900 !important; -webkit-text-fill-color:#e06600 !important;">20</span><span>21</span>
+            <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span class="cal-day--active" style="color:#ffa447 !important; font-weight:900 !important; -webkit-text-fill-color:#ffa447 !important;">20</span><span>21</span>
             <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
             <span>29</span><span>30</span>
           </div>

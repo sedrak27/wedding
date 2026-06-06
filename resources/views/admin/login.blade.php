@@ -8,11 +8,11 @@
     <style>
         body { background-color: #fff4df; height: 100vh; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; }
         .login-card { width: 100%; max-width: 400px; padding: 40px; border-radius: 20px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.1); background: white; }
-        .btn-primary-orange { background-color: #ff8d21; color: white; border-radius: 12px; padding: 12px; width: 100%; border: none; transition: 0.3s; font-weight: 600; }
+        .btn-primary-orange { background-color: #ffa447; color: white; border-radius: 12px; padding: 12px; width: 100%; border: none; transition: 0.3s; font-weight: 600; }
         .btn-primary-orange:hover { background-color: #e67a0d; color: white; transform: translateY(-2px); }
         .form-control { border-radius: 12px; padding: 12px; border: 1px solid #eee; background-color: #fafafa; }
-        .form-control:focus { border-color: #ff8d21; box-shadow: 0 0 0 0.25rem rgba(255, 141, 33, 0.1); }
-        .logo { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #ff8d21; margin-bottom: 20px; text-align: center; }
+        .form-control:focus { border-color: #ffa447; box-shadow: 0 0 0 0.25rem rgba(255, 141, 33, 0.1); }
+        .logo { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #ffa447; margin-bottom: 20px; text-align: center; }
     </style>
 </head>
 <body>
